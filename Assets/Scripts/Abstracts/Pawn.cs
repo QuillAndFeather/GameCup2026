@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Pawn : MonoBehaviour
@@ -36,5 +37,6 @@ public abstract class Pawn : MonoBehaviour
     
     
     }
+   
 
 }
