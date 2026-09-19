@@ -647,7 +647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5159138943573016997}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ItemSpawns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
