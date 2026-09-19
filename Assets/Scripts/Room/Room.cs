@@ -31,8 +31,8 @@ public class Room : MonoBehaviour
     public void StartRoom(GameObject taskPrefab)
     {
         playerObject.transform.position = playerSpawn.transform.position; // teleport player to room
-        SpawnObject(taskPrefab); // spawn task object in room
-        SpawnMilkMan(); // spawn choco milk man in room
+        SpawnObject(taskPrefab); // spawn task object in room (if spawnpoints exist)
+        SpawnMilkMan(); // spawn choco milk man in room (if spawnpoints exist)
     }
 
     public void EndRoom()
@@ -42,7 +42,8 @@ public class Room : MonoBehaviour
         {
             Destroy(spawnedObjects[i]);
         }
-        Destroy(milkManObject);
+        if (milkManObject != null)
+            Destroy(milkManObject);
     }
 
     private void SpawnObject(GameObject objectToSpawn)
