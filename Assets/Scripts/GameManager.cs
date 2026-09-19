@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public List<Room> rooms = new();
     public Room currentRoom;
 
+    public Controller controller;
+
     private void Awake()
     {
         if (instance == null)
@@ -61,14 +63,22 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
+        
         RoomManger.instance.LoadRoomByName("LobbyRoom");
     }
     public void LoadCredits()
     {
+        Debug.Log("Loading Credits");
         RoomManger.instance.LoadRoomByName("CreditsRoom");
     }
     public void QuitGame()
     {
+        Debug.Log("Quitting Game");
         Application.Quit();
+    }
+    public void GoToMain()
+    {
+        Debug.Log("Going to Main Menu");
+        RoomManger.instance.LoadRoomByName("MainMenu");
     }
 }

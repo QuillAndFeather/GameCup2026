@@ -8,6 +8,7 @@ public class ButtonCode : MonoBehaviour
     public void StartGame()
     {
         GameManager.instance.StartGame();
+        
     }
     public void LoadCredits()
     {

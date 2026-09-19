@@ -4,7 +4,7 @@ public class RoomManger : MonoBehaviour
 {
    public static RoomManger instance;
    public GameObject[] rooms; // Array to hold all room GameObjects
-    public GameObject LoobyRoom;
+    public GameObject LobbyRoom;
     public GameObject BrainRoom;
     public void Awake()
     {
@@ -18,44 +18,41 @@ public class RoomManger : MonoBehaviour
         }
         // Ensure all rooms are inactive at the start
         RoomOff();
-    }
-    public void LoadLoobyRoom()
+        LoadRoomByName("MainMenu");
+        }
+    public void LoadLobbyRoom()
     {
-        LoobyRoom.SetActive(true);
+        LobbyRoom.SetActive(true);
         BrainRoom.SetActive(false);
     }
     public void LoadBrainRoom()
     {
-        LoobyRoom.SetActive(false);
+        LobbyRoom.SetActive(false);
         BrainRoom.SetActive(true);
     }
     public void LoadRoom(GameObject room)
     {
-        LoobyRoom.SetActive(false);
-        BrainRoom.SetActive(false);
+        RoomOff(); // Deactivate all rooms first
         room.SetActive(true);
     }
     public void LoadRoomByName(string roomName)
     {
-        switch (roomName)
+    foreach (GameObject room in rooms)
+    {
+        if (room.name == roomName)
         {
-            case "LoobyRoom":
-                LoadRoom(LoobyRoom);
-                break;
-            case "BrainRoom":
-                LoadRoom(BrainRoom);
-                break;
-            default:
-                Debug.LogWarning($"Room '{roomName}' not found.");
-                break;
+            LoadRoom(room);
+            return;
         }
-    }
+        }
+    Debug.LogWarning($"Room '{roomName}' not found.");
+}
     public void LoadRoomByIndex(int index)
     {
         switch (index)
         {
             case 0:
-                LoadRoom(LoobyRoom);
+                LoadRoom(LobbyRoom);
                 break;
             case 1:
                 LoadRoom(BrainRoom);
