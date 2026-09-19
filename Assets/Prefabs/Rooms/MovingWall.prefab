@@ -199,4 +199,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovingWall
   health: {fileID: 8140142715797736791}
   maxMoveSpeed: 2
-  currentMoveSpeed: 0
+  patrolDuration: 2
+  movementType: 0
