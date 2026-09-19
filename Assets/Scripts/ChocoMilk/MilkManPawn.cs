@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MilkManPawn : MonoBehaviour
 {
-    private GameManager gameManager;
+    private RoomManager roomManager;
     public PlayerPawn playerPawn;
     public Vector2 movementInput;
 
@@ -10,8 +10,8 @@ public class MilkManPawn : MonoBehaviour
 
     void Start()
     {
-        gameManager = GameManager.instance;
-        playerPawn = gameManager.playerPawn;
+        roomManager = RoomManager.instance;
+        playerPawn = roomManager.playerPawn;
     }
 
     void Update()

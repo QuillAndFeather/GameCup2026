@@ -9,17 +9,17 @@ public class Room : MonoBehaviour
     public List<ObjectSpawnpoint> objectSpawns = new();
     public List<MilkManSpawnpoint> milkManSpawns = new();
     public List<GameObject> spawnedObjects = new();
-    private GameManager gameManager;
+    private RoomManager roomManager;
     private GameObject playerObject;
     private GameObject milkManObject;
     private GameObject milkManPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameManager = GameManager.instance;
-        gameManager.rooms.Add(this);
-        playerObject = gameManager.playerPawn.gameObject;
-        milkManPrefab = gameManager.milkManPrefab;
+        roomManager = RoomManager.instance;
+        roomManager.rooms.Add(this.gameObject);
+        playerObject = roomManager.playerPawn.gameObject;
+        milkManPrefab = roomManager.milkManPrefab;
     }
 
     // Update is called once per frame
