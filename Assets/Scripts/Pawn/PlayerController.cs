@@ -24,7 +24,7 @@ public class PlayerController : Controller
                 pawn.interact();
             }
 
-            if (inputAction["Shoot"].WasPressedThisFrame())
+            if (inputAction["Attack"].WasPressedThisFrame())
             {
                 pawn.Shoot();
             }
