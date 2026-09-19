@@ -32,5 +32,9 @@ public abstract class Pawn : MonoBehaviour
     {
         //do things
     }
+    public virtual void interact() { 
+    
+    
+    }
 
 }

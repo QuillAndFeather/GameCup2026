@@ -12,6 +12,12 @@ public class PlayerController : Controller
     {
         Vector2 movement = inputAction["Move"].ReadValue<Vector2>();
         pawn.Move(movement);
+
+        if (inputAction["Interact"].triggered)
+        {
+            pawn.interact();
+        }
+
         base.Decision();
     }
 }
