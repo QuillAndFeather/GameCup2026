@@ -1164,6 +1164,7 @@ MonoBehaviour:
   playerPawn: {fileID: 83406213}
   objectPrefabs:
   - {fileID: 8000339430935729140, guid: abe254d7f6cbcae41b2aa7b167ae632d, type: 3}
+  - {fileID: 1110710079407046325, guid: 601abf51a404c9b4fb82dc41c27fddb9, type: 3}
   currentObjectPrefab: {fileID: 0}
   currentRoom: {fileID: 0}
   rooms: []

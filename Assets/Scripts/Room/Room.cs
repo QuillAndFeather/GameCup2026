@@ -53,6 +53,7 @@ public class Room : MonoBehaviour
             GameObject spawnedObject = Instantiate(objectToSpawn, objectSpawns[objSpawn].transform.position, Quaternion.identity);
             Object newObject = spawnedObject.GetComponent<Object>();
             newObject.SetOwnerRoom(this);
+            //todo: spawn decoy items
         }
         else
         {

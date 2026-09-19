@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5874914210289602843}
   - component: {fileID: 1138589423275302809}
   - component: {fileID: -1089151037213480845}
+  - component: {fileID: 1908261101995016556}
   m_Layer: 0
   m_Name: BookObject
   m_TagString: Untagged
@@ -123,7 +124,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -165,7 +166,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -193,3 +194,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e55e96146bc204b99a2bd7e23bbd6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractablePickup
+  interactionIcon: {fileID: 0}
+--- !u!114 &1908261101995016556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000339430935729140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148612441091dca479688a00aae920a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupTrigger
