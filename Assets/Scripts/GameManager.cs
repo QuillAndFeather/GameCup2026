@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject milkManPrefab;
     public PlayerPawn playerPawn;
+    public List<GameObject> objectPrefabs = new();
     public List<Room> rooms = new();
 
     private void Awake()
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -31,4 +33,9 @@ public class GameManager : MonoBehaviour
     {
         
     }
-}
+
+    public void HandleMilkManCollision()
+    {
+        //todo: call EndRoom() on current room
+    }
+ }

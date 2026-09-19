@@ -31,6 +31,11 @@ public class Room : MonoBehaviour
         SpawnMilkMan(); // spawn choco milk man in room
     }
 
+    public void EndRoom()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void SpawnObject(GameObject objectToSpawn)
     {
         if (objectSpawns.Count > 0)
@@ -40,7 +45,7 @@ public class Room : MonoBehaviour
         }
         else
         {
-            Debug.Log("Room is missing references to object spawn locations");
+            Debug.LogWarning("Room is missing object spawn locations");
         }
     }
 
