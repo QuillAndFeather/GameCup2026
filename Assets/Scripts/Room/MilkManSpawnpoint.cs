@@ -7,7 +7,7 @@ public class MilkManSpawnpoint : MonoBehaviour
     void Start()
     {
         parentRoom = transform.parent.GetComponent<Room>();
-        parentRoom.SetMilkManSpawnpoint(this.gameObject);
+        parentRoom.SetMilkManSpawnpoint(this);
     }
 
     // Update is called once per frame

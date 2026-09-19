@@ -4,11 +4,11 @@ using System.Collections.Generic;
 public class Room : MonoBehaviour
 {
     public List<ObjectSpawnpoint> objectSpawns = new();
+    public List<MilkManSpawnpoint> milkManSpawnpoints = new();
     public List<GameObject> spawnedObjects = new();
     private GameManager gameManager;
     private GameObject playerObject;
     public GameObject playerSpawn;
-    public GameObject milkManSpawn;
     public GameObject milkManObject;
     private GameObject milkManPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,8 +47,8 @@ public class Room : MonoBehaviour
     {
         if (objectSpawns.Count > 0)
         {
-            int spawn = Random.Range(0, objectSpawns.Count); // pick a random spawn location
-            GameObject spawnedObject = Instantiate(objectToSpawn, objectSpawns[spawn].transform.position, Quaternion.identity);
+            int objSpawn = Random.Range(0, objectSpawns.Count); // pick a random spawn location
+            GameObject spawnedObject = Instantiate(objectToSpawn, objectSpawns[objSpawn].transform.position, Quaternion.identity);
             Object newObject = spawnedObject.GetComponent<Object>();
             newObject.ownerRoom = this;
         }
@@ -60,7 +60,15 @@ public class Room : MonoBehaviour
 
     private void SpawnMilkMan()
     {
-        milkManObject = Instantiate(milkManPrefab, milkManSpawn.transform.position, Quaternion.identity);
+        if (milkManSpawnpoints.Count > 0)
+        {
+            int milkSpawn = Random.Range(0, objectSpawns.Count); // pick a random spawn location
+            milkManObject = Instantiate(milkManPrefab, milkManSpawnpoints[milkSpawn].transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Room is missing milk man spawn locations");
+        }
     }
 
     public void AddObjectSpawnpoint(ObjectSpawnpoint spawnpoint)
@@ -73,8 +81,8 @@ public class Room : MonoBehaviour
         playerSpawn = spawnpoint;
     }
 
-    public void SetMilkManSpawnpoint(GameObject spawnpoint)
+    public void SetMilkManSpawnpoint(MilkManSpawnpoint spawnpoint)
     {
-        milkManSpawn = spawnpoint;
+        milkManSpawnpoints.Add(spawnpoint);
     }
 }

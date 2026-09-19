@@ -195,9 +195,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427123018357742359, guid: 481887248a18c0544b8a2b4fc6488ae9, type: 3}
+      propertyPath: m_Name
+      value: ObjectSpawnpoint2
+      objectReference: {fileID: 0}
+    - target: {fileID: 427123018357742359, guid: 481887248a18c0544b8a2b4fc6488ae9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1116281234041543103, guid: 481887248a18c0544b8a2b4fc6488ae9, type: 3}
       propertyPath: m_Name
       value: LivingRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173946593268114065, guid: 481887248a18c0544b8a2b4fc6488ae9, type: 3}
+      propertyPath: m_Name
+      value: ObjectSpawnpoint1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173946593268114065, guid: 481887248a18c0544b8a2b4fc6488ae9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6432467742190471135, guid: 481887248a18c0544b8a2b4fc6488ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -885,13 +901,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 589973871}
-        m_TargetAssemblyTypeName: Room, Assembly-CSharp
-        m_MethodName: StartRoom
+      - m_Target: {fileID: 1546409695}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: EnterRoom
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8000339430935729140, guid: abe254d7f6cbcae41b2aa7b167ae632d, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 589973871}
+          m_ObjectArgumentAssemblyTypeName: Room, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -977,7 +993,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   milkManPrefab: {fileID: 773071373734162852, guid: fdf8e5fcefbbea549a9e97651add9aa1, type: 3}
   playerPawn: {fileID: 2029001959}
+  objectPrefabs:
+  - {fileID: 8000339430935729140, guid: abe254d7f6cbcae41b2aa7b167ae632d, type: 3}
+  currentObjectPrefab: {fileID: 0}
   rooms: []
+  currentRoom: {fileID: 0}
 --- !u!4 &1546409696
 Transform:
   m_ObjectHideFlags: 0
