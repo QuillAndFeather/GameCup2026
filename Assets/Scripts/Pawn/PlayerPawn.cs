@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerPawn : Pawn
 {
+    private RoomManager roomManager;
     [Header("Pawn Speed")]
     public float speed;
     [Header("Pawn Mover")]
@@ -10,6 +11,9 @@ public class PlayerPawn : Pawn
 
     [Header("Interaction")]
     public PlayerInteraction interaction;
+
+    [Header("Attacking")]
+    public Shooter shooter;
 
     [Header("Animation")]
     private Animator playerAnimator;
@@ -19,7 +23,9 @@ public class PlayerPawn : Pawn
     {
         mover = GetComponent<Mover>();
         interaction = GetComponent<PlayerInteraction>();
+        shooter = GetComponent<Shooter>();
         playerAnimator = GetComponent<Animator>();
+        roomManager = RoomManager.instance;
     }
     
     // Update is called once per frame
@@ -41,6 +47,22 @@ public class PlayerPawn : Pawn
 
         interaction.PInteraction();
    }
+    void OnEnable()
+    {
+        GameManager.instance.controller.Possess(this);
+    }
+
+    void OnDisable()
+    {
+        GameManager.instance.controller.UnPossess();
+    }
+
+
+    public override void Shoot()
+    {
+        if (roomManager.isInCombat)
+            shooter.Shoot();
+    }
    
 
 }

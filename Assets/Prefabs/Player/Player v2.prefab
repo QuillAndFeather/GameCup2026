@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 277149821965745509}
   - component: {fileID: 2440967802639769581}
   - component: {fileID: 7389979607803092333}
+  - component: {fileID: 1747173410563896923}
   m_Layer: 0
   m_Name: Player v2
   m_TagString: Player
@@ -55,6 +56,7 @@ MonoBehaviour:
   speed: 1.6
   mover: {fileID: 0}
   interaction: {fileID: 0}
+  shooter: {fileID: 0}
 --- !u!114 &5512051818626879819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,3 +255,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1747173410563896923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390370833463285635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc5ddb530833624790239a04e419cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  bulletPrefab: {fileID: 2827980866800142696, guid: fe7696c49d66bdd439828e94f07204d9, type: 3}
+  maxCooldown: 0.5
+  currentCooldown: 0
