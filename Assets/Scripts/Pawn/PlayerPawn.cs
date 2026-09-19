@@ -11,6 +11,9 @@ public class PlayerPawn : Pawn
     [Header("Interaction")]
     public PlayerInteraction interaction;
 
+    [Header("Attacking")]
+    public Shooter shooter;
+
     [Header("Animation")]
     private Animator playerAnimator;
 
@@ -19,6 +22,7 @@ public class PlayerPawn : Pawn
     {
         mover = GetComponent<Mover>();
         interaction = GetComponent<PlayerInteraction>();
+        shooter = GetComponent<Shooter>();
         playerAnimator = GetComponent<Animator>();
     }
     
@@ -41,6 +45,11 @@ public class PlayerPawn : Pawn
 
         interaction.PInteraction();
    }
+
+    public override void Shoot()
+    {
+        shooter.Shoot();
+    }
    
 
 }

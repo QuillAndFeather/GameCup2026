@@ -24,6 +24,11 @@ public class PlayerController : Controller
                 pawn.interact();
             }
 
+            if (inputAction["Attack"].WasPressedThisFrame())
+            {
+                pawn.Shoot();
+            }
+
             base.Decision();
         }
         else //Player cannot move, primarily due dialogue popups
