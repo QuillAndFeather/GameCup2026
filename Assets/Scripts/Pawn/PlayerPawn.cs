@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerPawn : Pawn
 {
+    private RoomManager roomManager;
     [Header("Pawn Speed")]
     public float speed;
     [Header("Pawn Mover")]
@@ -24,6 +25,7 @@ public class PlayerPawn : Pawn
         interaction = GetComponent<PlayerInteraction>();
         shooter = GetComponent<Shooter>();
         playerAnimator = GetComponent<Animator>();
+        roomManager = RoomManager.instance;
     }
     
     // Update is called once per frame
@@ -48,7 +50,8 @@ public class PlayerPawn : Pawn
 
     public override void Shoot()
     {
-        shooter.Shoot();
+        if (roomManager.isInCombat)
+            shooter.Shoot();
     }
    
 

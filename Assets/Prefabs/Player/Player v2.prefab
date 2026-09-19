@@ -268,3 +268,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
   bulletPrefab: {fileID: 2827980866800142696, guid: fe7696c49d66bdd439828e94f07204d9, type: 3}
+  maxCooldown: 0.5
+  currentCooldown: 0
