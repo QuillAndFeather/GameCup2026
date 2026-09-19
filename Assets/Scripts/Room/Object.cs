@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class Object : MonoBehaviour
 {
-    public Room ownerRoom;
-
+    private Room ownerRoom;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,6 +13,11 @@ public class Object : MonoBehaviour
     void OnDestroy()
     {
         ownerRoom.spawnedObjects.Remove(this.gameObject);
+    }
+
+    public void SetOwnerRoom(Room room)
+    {
+        ownerRoom = room;
     }
 
     // Update is called once per frame

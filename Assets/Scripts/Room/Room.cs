@@ -3,13 +3,15 @@ using System.Collections.Generic;
 
 public class Room : MonoBehaviour
 {
+    // Each room requires 1 Player Spawn, at least 1 Object Spawnpoint, and at least 1 Milk Man Spawnpoint
+    // Spawnpoints will populate automatically as long as the Room is their parent object
+    [SerializeField] private GameObject playerSpawn;
     public List<ObjectSpawnpoint> objectSpawns = new();
-    public List<MilkManSpawnpoint> milkManSpawnpoints = new();
+    public List<MilkManSpawnpoint> milkManSpawns = new();
     public List<GameObject> spawnedObjects = new();
     private GameManager gameManager;
     private GameObject playerObject;
-    public GameObject playerSpawn;
-    public GameObject milkManObject;
+    private GameObject milkManObject;
     private GameObject milkManPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,7 +52,7 @@ public class Room : MonoBehaviour
             int objSpawn = Random.Range(0, objectSpawns.Count); // pick a random spawn location
             GameObject spawnedObject = Instantiate(objectToSpawn, objectSpawns[objSpawn].transform.position, Quaternion.identity);
             Object newObject = spawnedObject.GetComponent<Object>();
-            newObject.ownerRoom = this;
+            newObject.SetOwnerRoom(this);
         }
         else
         {
@@ -60,10 +62,10 @@ public class Room : MonoBehaviour
 
     private void SpawnMilkMan()
     {
-        if (milkManSpawnpoints.Count > 0)
+        if (milkManSpawns.Count > 0)
         {
-            int milkSpawn = Random.Range(0, objectSpawns.Count); // pick a random spawn location
-            milkManObject = Instantiate(milkManPrefab, milkManSpawnpoints[milkSpawn].transform.position, Quaternion.identity);
+            int milkSpawn = Random.Range(0, milkManSpawns.Count); // pick a random spawn location
+            milkManObject = Instantiate(milkManPrefab, milkManSpawns[milkSpawn].transform.position, Quaternion.identity);
         }
         else
         {
@@ -83,6 +85,6 @@ public class Room : MonoBehaviour
 
     public void SetMilkManSpawnpoint(MilkManSpawnpoint spawnpoint)
     {
-        milkManSpawnpoints.Add(spawnpoint);
+        milkManSpawns.Add(spawnpoint);
     }
 }
