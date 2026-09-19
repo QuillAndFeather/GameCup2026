@@ -276,6 +276,10 @@ PrefabInstance:
       propertyPath: pawn
       value: 
       objectReference: {fileID: 2029001959}
+    - target: {fileID: 1446529601583364538, guid: 47d239e414e46b5478151cf60aee629f, type: 3}
+      propertyPath: inputAction
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 2e39572dfb6d16f4b84fd569c33fad95, type: 3}
     - target: {fileID: 3823180864663331544, guid: 47d239e414e46b5478151cf60aee629f, type: 3}
       propertyPath: m_Name
       value: Controller
