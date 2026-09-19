@@ -756,6 +756,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingWall
       objectReference: {fileID: 0}
+    - target: {fileID: 7721254486930449619, guid: a750f6a8f9cd0ef40a0672990b61f771, type: 3}
+      propertyPath: mode
+      value: PatrolUpDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721254486930449619, guid: a750f6a8f9cd0ef40a0672990b61f771, type: 3}
+      propertyPath: patrolDuration
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1233,14 +1241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ab16c48e042a645bee18005b6231c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomManger
-  isInCombat: 1
-  milkManPrefab: {fileID: 773071373734162852, guid: fdf8e5fcefbbea549a9e97651add9aa1, type: 3}
-  playerPawn: {fileID: 83406213}
-  objectPrefabs:
-  - {fileID: 8000339430935729140, guid: abe254d7f6cbcae41b2aa7b167ae632d, type: 3}
-  - {fileID: 1110710079407046325, guid: 601abf51a404c9b4fb82dc41c27fddb9, type: 3}
-  currentObjectPrefab: {fileID: 0}
-  currentRoom: {fileID: 0}
   rooms: []
   LoobyRoom: {fileID: 173516990}
   BrainRoom: {fileID: 558791042}
