@@ -4,6 +4,7 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     public static RoomManager instance;
+    public bool isInCombat;
     public GameObject milkManPrefab;
     public PlayerPawn playerPawn;
     public List<GameObject> objectPrefabs = new();
