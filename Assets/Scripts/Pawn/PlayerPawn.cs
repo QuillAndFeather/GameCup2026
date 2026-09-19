@@ -26,9 +26,7 @@ public class PlayerPawn : Pawn
         mover.Move(pos, speed);
     }
    public override void interact() {
-
-        interaction.PInteraction();
-
+        interaction.Doorinteract();
    }
    
 

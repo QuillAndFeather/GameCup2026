@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Get Notebook
   m_EditorClassIdentifier: Assembly-CSharp::TaskSO
   bComplete: 0
-  taskRequirement: Grab the Notebook
+  taskRequirement: 
