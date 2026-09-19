@@ -13,17 +13,24 @@ public class PlayerController : Controller
     }
     public override void Decision()
     {
-        if (bCanMove) //Player can currently move
+        if (pawn != null)
         {
-            Vector2 movement = inputAction["Move"].ReadValue<Vector2>();
-            //Debug.Log("Player Movement Input: " + movement);
-            pawn.Move(movement);
 
-            if (inputAction["Interact"].WasPressedThisFrame())
+
+            if (bCanMove) //Player can currently move
             {
-                pawn.interact();
-            }
+                Vector2 movement = inputAction["Move"].ReadValue<Vector2>();
+                //Debug.Log("Player Movement Input: " + movement);
+                pawn.Move(movement);
 
+                if (inputAction["Interact"].WasPressedThisFrame())
+                {
+                    pawn.interact();
+                }
+
+                base.Decision();
+            }
+            else //Player cannot move, primarily due dialogue popups
             if (inputAction["Attack"].WasPressedThisFrame())
             {
                 pawn.Shoot();
@@ -35,9 +42,12 @@ public class PlayerController : Controller
         {
             if (inputAction["Interact"].WasPressedThisFrame())
             {
-                DialogueManager.instance.DisableTextBox(); //Hide the text box
+                if (inputAction["Interact"].WasPressedThisFrame())
+                {
+                    DialogueManager.instance.DisableTextBox(); //Hide the text box
 
-                SwapMovementState(); //Allow the player to move again
+                    SwapMovementState(); //Allow the player to move again
+                }
             }
         }
     }

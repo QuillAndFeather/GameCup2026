@@ -47,6 +47,16 @@ public class PlayerPawn : Pawn
 
         interaction.PInteraction();
    }
+    void OnEnable()
+    {
+        GameManager.instance.controller.Possess(this);
+    }
+
+    void OnDisable()
+    {
+        GameManager.instance.controller.UnPossess();
+    }
+
 
     public override void Shoot()
     {
