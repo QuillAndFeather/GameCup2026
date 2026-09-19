@@ -9,7 +9,8 @@ public class PickupTrigger : MonoBehaviour
     }
     public void PickupInteraction()
     {
-        // Pick up object, log it
+        // Pick up object, log it, self destruct
         Debug.Log("Picked up object");
+        Destroy(gameObject);
     }
 }
