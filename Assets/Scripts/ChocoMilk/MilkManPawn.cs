@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class MilkManPawn : MonoBehaviour
 {
+    private GameManager gameManager;
     public PlayerPawn playerPawn;
     public Vector2 movementInput;
 
     public float speed;
+
+    void Start()
+    {
+        gameManager = GameManager.instance;
+        playerPawn = gameManager.playerPawn;
+    }
 
     void Update()
     {
