@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     public GameObject milkManPrefab;
     public PlayerPawn playerPawn;
     public List<GameObject> objectPrefabs = new();
+    public GameObject currentObjectPrefab;
     public List<Room> rooms = new();
+    public Room currentRoom;
 
     private void Awake()
     {
@@ -36,6 +38,25 @@ public class GameManager : MonoBehaviour
 
     public void HandleMilkManCollision()
     {
-        //todo: call EndRoom() on current room
+        //todo: gameover screen?
+        ExitRoom();
+    }
+
+    private GameObject GetTaskPrefab()
+    {
+        //todo: ask task manager which object prefab to return
+        return objectPrefabs[0];
+    }
+
+    public void EnterRoom(Room room) // this function will be called by interactable door objects
+    {
+        currentRoom = room;
+        currentObjectPrefab = GetTaskPrefab();
+        currentRoom.StartRoom(currentObjectPrefab);
+    }
+
+    public void ExitRoom()
+    {
+        currentRoom.EndRoom();
     }
  }

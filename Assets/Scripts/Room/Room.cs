@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 public class Room : MonoBehaviour
 {
-    public List<SpawnObject> objectSpawns = new();
+    public List<ObjectSpawnpoint> objectSpawns = new();
+    public List<GameObject> spawnedObjects = new();
     private GameObject playerObject;
     public GameObject playerSpawn;
     public GameObject milkManSpawn;
@@ -34,6 +35,10 @@ public class Room : MonoBehaviour
     public void EndRoom()
     {
         gameObject.SetActive(false);
+        for (int i = 0; i < spawnedObjects.Count; i++)
+        {
+            Destroy(spawnedObjects[i]);
+        }
     }
 
     private void SpawnObject(GameObject objectToSpawn)
@@ -41,7 +46,9 @@ public class Room : MonoBehaviour
         if (objectSpawns.Count > 0)
         {
             int spawn = Random.Range(0, objectSpawns.Count); // pick a random spawn location
-            Instantiate(objectToSpawn, objectSpawns[spawn].transform.position, Quaternion.identity); // spawn the object at that location
+            GameObject spawnedObject = Instantiate(objectToSpawn, objectSpawns[spawn].transform.position, Quaternion.identity);
+            Object newObject = spawnedObject.GetComponent<Object>();
+            newObject.ownerRoom = this;
         }
         else
         {
@@ -54,7 +61,7 @@ public class Room : MonoBehaviour
         Instantiate(milkManPrefab, milkManSpawn.transform.position, Quaternion.identity);
     }
 
-    public void AddObjectSpawnpoint(SpawnObject spawnpoint)
+    public void AddObjectSpawnpoint(ObjectSpawnpoint spawnpoint)
     {
         objectSpawns.Add(spawnpoint);
     }

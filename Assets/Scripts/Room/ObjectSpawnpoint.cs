@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class SpawnObject : MonoBehaviour
+public class ObjectSpawnpoint : MonoBehaviour
 {
-    private GameObject spawnedObject;
     private Room parentRoom;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,10 +16,4 @@ public class SpawnObject : MonoBehaviour
     {
         
     }
-
-    public void spawnObject(GameObject objectToSpawn)
-    {
-        spawnedObject = Instantiate(objectToSpawn, transform.position, transform.rotation);
-    }
-
 }
