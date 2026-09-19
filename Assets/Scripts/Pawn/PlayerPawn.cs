@@ -10,23 +10,36 @@ public class PlayerPawn : Pawn
 
     [Header("Interaction")]
     public PlayerInteraction interaction;
+
+    [Header("Animation")]
+    private Animator playerAnimator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mover = GetComponent<Mover>();
         interaction = GetComponent<PlayerInteraction>();
+        playerAnimator = GetComponent<Animator>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
 
     }
     public override void Move(Vector2 pos) {
+
+        if (pos.x != 0 || pos.y != 0) playerAnimator.SetBool("bMoving", true);
+
+        else playerAnimator.SetBool("bMoving", false);
+
         mover.Move(pos, speed);
     }
    public override void interact() {
-        interaction.Doorinteract();
+
+        playerAnimator.SetTrigger("tInteract");
+
+        interaction.PInteraction();
    }
    
 
