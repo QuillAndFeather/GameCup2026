@@ -687,11 +687,11 @@ PlayerSettings:
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
   enableDirectStorage: 0
-  cloudProjectId: ab77ac77-588b-4dc3-8685-abf9929be3a9
+  cloudProjectId: 622d476b-6ef0-4ef8-ae69-1201287a184a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: GameCup
-  organizationId: charlessilbergleith
+  projectName: GameCup 2026
+  organizationId: inkpusheen
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
