@@ -16,6 +16,7 @@ public class PlayerController : Controller
         if (bCanMove) //Player can currently move
         {
             Vector2 movement = inputAction["Move"].ReadValue<Vector2>();
+            //Debug.Log("Player Movement Input: " + movement);
             pawn.Move(movement);
 
             if (inputAction["Interact"].WasPressedThisFrame())
