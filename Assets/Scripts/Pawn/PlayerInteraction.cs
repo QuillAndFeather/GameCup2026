@@ -5,7 +5,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     public Interactable interactableInRange; //Interactable in range
 
-    public void PInteraction()
+    public void Doorinteract()
     {
         if (interactableInRange is not null) interactableInRange.Interaction();
     }

@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
 
 public class TaskDoorTrigger : MonoBehaviour
 {
@@ -29,10 +32,12 @@ public class TaskDoorTrigger : MonoBehaviour
 
         if (bActiveTask) //Case that it is currently active
         {
+            RoomManger.instance.LoadRoomByName("BrainRoom"); //Load the room that is assigned to this task
             Debug.Log("The player can participate in this minigame");
         }
         else //Case that it currently is not active
         {
+            RoomManger.instance.LoadBrainRoom();
             Debug.Log("Task in here? Delulu much?");
         }
     }

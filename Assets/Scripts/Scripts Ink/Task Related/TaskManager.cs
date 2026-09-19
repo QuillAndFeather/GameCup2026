@@ -88,7 +88,7 @@ public class TaskManager : MonoBehaviour
     public void DisplayTasks(TMP_Text textField)
     {
         //Reset the text field
-        textField.text = "";
+        textField.text = ""; 
 
         //Loop through all the active tasks to display
         for (int task = 0; task < tasks.Count; task++)
