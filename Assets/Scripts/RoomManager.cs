@@ -1,9 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomManger : MonoBehaviour
+public class RoomManager : MonoBehaviour
 {
-   public static RoomManger instance;
-   public GameObject[] rooms; // Array to hold all room GameObjects
+    public static RoomManager instance;
+    public GameObject milkManPrefab;
+    public PlayerPawn playerPawn;
+    public List<GameObject> objectPrefabs = new();
+    public GameObject currentObjectPrefab;
+    public Room currentRoom;
+    public List<GameObject> rooms = new(); // List to hold all room GameObjects
     public GameObject LoobyRoom;
     public GameObject BrainRoom;
     public void Awake()
@@ -66,13 +72,34 @@ public class RoomManger : MonoBehaviour
         }
     }
     public void RoomOff() {
-       for(int i = 0; i < rooms.Length; i++)
+       for(int i = 0; i < rooms.Count; i++)
         {
             rooms[i].SetActive(false);
         }
     }
 
+    public void HandleMilkManCollision()
+    {
+        //todo: take player back to previous room
+    }
 
+    private GameObject GetTaskPrefab()
+    {
+        //todo: ask task manager which object prefab to return
+        return objectPrefabs[0];
+    }
+
+    public void EnterRoom(Room room)
+    {
+        currentRoom = room;
+        currentObjectPrefab = GetTaskPrefab();
+        currentRoom.StartRoom(currentObjectPrefab);
+    }
+
+    public void ExitRoom()
+    {
+        currentRoom.EndRoom();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

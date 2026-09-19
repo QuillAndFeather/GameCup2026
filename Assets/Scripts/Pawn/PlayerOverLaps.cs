@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PlayerOverLaps : MonoBehaviour
 {
-    private GameManager gameManager;
+    private RoomManager roomManager;
     void Start()
     {
-        gameManager = GameManager.instance;
+        roomManager = RoomManager.instance;
     }
     
     public void OnTriggerEnter2D(Collider2D other)
@@ -14,7 +14,7 @@ public class PlayerOverLaps : MonoBehaviour
         if (othermilk != null)
         {
            Debug.Log("Player has overlapped with MilkManPawn!");
-           gameManager.HandleMilkManCollision();
+           roomManager.HandleMilkManCollision();
         }
     }
 }

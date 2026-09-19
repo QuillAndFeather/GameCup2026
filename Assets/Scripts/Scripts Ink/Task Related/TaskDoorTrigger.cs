@@ -32,12 +32,12 @@ public class TaskDoorTrigger : MonoBehaviour
 
         if (bActiveTask) //Case that it is currently active
         {
-            RoomManger.instance.LoadRoomByName("BrainRoom"); //Load the room that is assigned to this task
+            RoomManager.instance.LoadRoomByName("BrainRoom"); //Load the room that is assigned to this task
             Debug.Log("The player can participate in this minigame");
         }
         else //Case that it currently is not active
         {
-            RoomManger.instance.LoadBrainRoom();
+            RoomManager.instance.LoadBrainRoom();
             Debug.Log("Task in here? Delulu much?");
         }
     }
