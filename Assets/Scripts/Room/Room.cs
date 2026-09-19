@@ -5,10 +5,11 @@ public class Room : MonoBehaviour
 {
     public List<ObjectSpawnpoint> objectSpawns = new();
     public List<GameObject> spawnedObjects = new();
+    private GameManager gameManager;
     private GameObject playerObject;
     public GameObject playerSpawn;
     public GameObject milkManSpawn;
-    private GameManager gameManager;
+    public GameObject milkManObject;
     private GameObject milkManPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,6 +40,7 @@ public class Room : MonoBehaviour
         {
             Destroy(spawnedObjects[i]);
         }
+        Destroy(milkManObject);
     }
 
     private void SpawnObject(GameObject objectToSpawn)
@@ -58,7 +60,7 @@ public class Room : MonoBehaviour
 
     private void SpawnMilkMan()
     {
-        Instantiate(milkManPrefab, milkManSpawn.transform.position, Quaternion.identity);
+        milkManObject = Instantiate(milkManPrefab, milkManSpawn.transform.position, Quaternion.identity);
     }
 
     public void AddObjectSpawnpoint(ObjectSpawnpoint spawnpoint)
