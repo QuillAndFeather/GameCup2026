@@ -9,12 +9,12 @@ public class PlayerPawn : Pawn
     public Mover mover;
 
     [Header("Interaction")]
-    PlayerInteraction interaction;
+    public PlayerInteraction interaction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mover = GetComponent<Mover>();
-
+        interaction = GetComponent<PlayerInteraction>();
     }
 
     // Update is called once per frame
@@ -26,8 +26,8 @@ public class PlayerPawn : Pawn
         mover.Move(pos, speed);
     }
    public override void interact() {
-        interaction.Doorinteract();
 
+        interaction.PInteraction();
 
    }
 }
