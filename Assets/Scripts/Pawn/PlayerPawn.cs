@@ -30,4 +30,6 @@ public class PlayerPawn : Pawn
         interaction.PInteraction();
 
    }
+   
+
 }
