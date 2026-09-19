@@ -81,6 +81,7 @@ public class RoomManager : MonoBehaviour
     public void HandleMilkManCollision()
     {
         //todo: take player back to previous room
+        ExitRoom();
     }
 
     private GameObject GetTaskPrefab()
