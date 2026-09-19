@@ -1,6 +1,6 @@
 ## Welcome to Project Forgotten! (Name Pending)<br>
 <br>
-# Naming convention for assets:<br>
+Naming convention for assets:<br>
 Scripts: CapitalOfEveryWord_Script <br>
 Sprites/Art: CapitalOfEveryWord_Sprite or SpriteSheet <br>
 Sprite Animation: CapitalOfEveryWord_Frame0, CapitalOfEveryWord_Frame1, CapitalOfEveryWord_Frame2, Etc. <br>
