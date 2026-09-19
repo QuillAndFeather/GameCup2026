@@ -4,17 +4,18 @@ using System.Collections.Generic;
 public class Room : MonoBehaviour
 {
     public List<SpawnObject> objectSpawns = new();
-    public GameObject playerObject;
+    private GameObject playerObject;
     public GameObject playerSpawn;
     public GameObject milkManSpawn;
-    public GameManager gameManager;
-    public GameObject milkManPrefab;
+    private GameManager gameManager;
+    private GameObject milkManPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gameManager = GameManager.instance;
         gameManager.rooms.Add(this);
         playerObject = gameManager.playerPawn.gameObject;
+        milkManPrefab = gameManager.milkManPrefab;
     }
 
     // Update is called once per frame
@@ -46,5 +47,20 @@ public class Room : MonoBehaviour
     private void SpawnMilkMan()
     {
         Instantiate(milkManPrefab, milkManSpawn.transform.position, Quaternion.identity);
+    }
+
+    public void AddObjectSpawnpoint(SpawnObject spawnpoint)
+    {
+        objectSpawns.Add(spawnpoint);
+    }
+
+    public void SetPlayerSpawnpoint(GameObject spawnpoint)
+    {
+        playerSpawn = spawnpoint;
+    }
+
+    public void SetMilkManSpawnpoint(GameObject spawnpoint)
+    {
+        milkManSpawn = spawnpoint;
     }
 }
