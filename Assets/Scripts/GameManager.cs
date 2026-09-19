@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject player;
+    public PlayerPawn playerPawn;
     public List<Room> rooms = new();
 
     private void Awake()
