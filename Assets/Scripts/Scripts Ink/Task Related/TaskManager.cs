@@ -14,7 +14,9 @@ public class TaskManager : MonoBehaviour
 
     [SerializeField] int taskCompletionThreshold; //Number of tasks that have to be completed for the game to end
 
-    [SerializeField] TMP_Text testText; //Temp for testing
+    [SerializeField] TMP_Text taskText; //Text to display tasks
+
+    [SerializeField] GameObject taskList; //Display of the task list
 
 
     private void Awake()
@@ -26,42 +28,67 @@ public class TaskManager : MonoBehaviour
     private void Start()
     {
         //Testing
-        DisplayTasks(testText);
+        RandomizeTasks();
+        DisplayTasks(taskText);
     }
 
     // Task Addition and Removal
 
-    public void AddInactiveTask(Predicate<TaskSO> taskToAdd)
+    public void AddInactiveTask(TaskSO taskToAdd)
     {
-        int taskRefIndex = tasks.FindIndex(taskToAdd); //Identify the index at which the task is located within the active list
+        int taskRefIndex = tasks.IndexOf(taskToAdd); //Identify the index at which the task is located within the active list
 
         inactiveTasks.Add(tasks[taskRefIndex]); //Move the designated task to the inactive tasks list
 
         tasks.RemoveAt(taskRefIndex); //Remove the specified index of the found reference index
+
+        DisplayTasks(taskText); //Update the task list
     }
 
-    public void RemoveActiveTask(Predicate<TaskSO> taskToRemove)
+    public void RemoveActiveTask(TaskSO taskToRemove)
     {
-        int taskRefIndex = inactiveTasks.FindIndex(taskToRemove); //Identify the index at which the task is located within the inactive list
+        int taskRefIndex = inactiveTasks.IndexOf(taskToRemove); //Identify the index at which the task is located within the inactive list
 
         tasks.Add(inactiveTasks[taskRefIndex]); //Move the designated task to the active tasks list
 
         inactiveTasks.RemoveAt(taskRefIndex); //Remove the specified index of the found reference index
+
+        DisplayTasks(taskText); //Update the task list
+    }
+
+    public void RandomizeTasks()
+    {
+        List<TaskSO> randomize = new(tasks); //Create a copy of the list
+
+        int loops = randomize.Count; //Get the loop count
+
+        tasks.Clear(); //Clear the list
+
+        for (int task = 0; task < loops; task++)
+        {
+            int index = UnityEngine.Random.Range(0, randomize.Count);
+
+            tasks.Add(randomize[index]);
+
+            randomize.RemoveAt(index);
+        }
     }
 
 
     // Task Completion
 
-    public void MarkTaskComplete(Predicate<TaskSO> taskToComplete)
+    public void MarkTaskComplete(TaskSO taskToComplete)
     {
-        int completedTaskIndex = tasks.FindIndex(taskToComplete); //Find the index of the task that was just completed
+        int completedTaskIndex = tasks.IndexOf(taskToComplete); //Find the index of the task that was just completed
 
         tasks[completedTaskIndex].bComplete = true; //Mark the task as complete
+
+        DisplayTasks(taskText); //Update the task list
 
         //Complete a check if all tasks have been completed, should this mark the end of this game
         bool bWin = ChecklistComplete();
 
-        Debug.Log(bWin);
+        //Debug.Log(bWin); //testing purposes
     }
 
     public bool ChecklistComplete()
@@ -93,9 +120,13 @@ public class TaskManager : MonoBehaviour
         //Loop through all the active tasks to display
         for (int task = 0; task < tasks.Count; task++)
         {
-            string taskToAdd = tasks[task].taskRequirement; //Grab the string to add
+            string taskToAdd;
 
-            textField.text += $"- {taskToAdd} \n"; //Add to the text field appropriately
+            if (tasks[task].bComplete) taskToAdd = tasks[task].taskLocation + "\n" + "-------------------" + "\n" + $"<s>{tasks[task].taskRequirement}</s>"; //Grab the string to add
+
+            else taskToAdd = tasks[task].taskLocation + "\n" + "-------------------" + "\n" + tasks[task].taskRequirement; //Grab the string to add
+
+            textField.text += $"{taskToAdd} \n \n"; //Add to the text field appropriately
         }
     }
 
@@ -108,5 +139,17 @@ public class TaskManager : MonoBehaviour
         if(tasks.Contains(searchTask)) return true;
 
         return false;
+    }
+
+    // Enabling and Disabling Task List
+
+    public void EnableTaskList()
+    {
+        taskList.SetActive(true);
+    }
+
+    public void DisableTaskList()
+    {
+        taskList.SetActive(false);
     }
 }
