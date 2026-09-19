@@ -1,5 +1,6 @@
 using UnityEngine;
 
+public enum MovementType { MoveLeft, PatrolUpDown, PatrolLeftRight };
 public class MovingWall : MonoBehaviour
 {
     public Health health;
@@ -7,14 +8,13 @@ public class MovingWall : MonoBehaviour
     public float patrolDuration;
     private float currentPatrolTime;
     private float currentMoveSpeed;
-    private Transform startingPos;
+    private string currentDirection;
     [Header("MoveLeft, PatrolUpDown, PatrolLeftRight")]
-    public string mode;
+    public MovementType movementType;
 
     void Start()
     {
         health = GetComponent<Health>();
-        startingPos = transform;
     }
 
     // Update is called once per frame
@@ -22,40 +22,60 @@ public class MovingWall : MonoBehaviour
     {
         currentMoveSpeed = health.currentHealth / health.maxHealth * maxMoveSpeed;
 
-        if (mode == "MoveLeft")
+        if (movementType == MovementType.MoveLeft)
         {
             transform.Translate(Vector3.left * currentMoveSpeed * Time.deltaTime);
         }
 
-        if (mode == "PatrolUpDown")
+        if (movementType == MovementType.PatrolUpDown)
         {
-            currentPatrolTime = patrolDuration;
-            while (currentPatrolTime > 0)
+            if (currentDirection == "Up")
             {
-                currentPatrolTime -= Time.deltaTime;
                 transform.Translate(Vector3.up * currentMoveSpeed * Time.deltaTime);
-            }
-            currentPatrolTime = patrolDuration;
-            while (currentPatrolTime > 0)
-            {
                 currentPatrolTime -= Time.deltaTime;
+                if (currentPatrolTime < 0)
+                {
+                    currentPatrolTime = 0;
+                    currentDirection = "Down";
+                    currentPatrolTime = patrolDuration;
+                }
+            }
+            else
+            {
                 transform.Translate(Vector3.down * currentMoveSpeed * Time.deltaTime);
+                currentPatrolTime -= Time.deltaTime;
+                if (currentPatrolTime < 0)
+                {
+                    currentPatrolTime = 0;
+                    currentDirection = "Up";
+                    currentPatrolTime = patrolDuration;
+                }
             }
         }
 
-        if (mode == "PatrolLeftRight")
+        if (movementType == MovementType.PatrolLeftRight)
         {
-            currentPatrolTime = patrolDuration;
-            while (currentPatrolTime > 0)
+            if (currentDirection == "Left")
             {
-                currentPatrolTime -= Time.deltaTime;
                 transform.Translate(Vector3.left * currentMoveSpeed * Time.deltaTime);
-            }
-            currentPatrolTime = patrolDuration;
-            while (currentPatrolTime > 0)
-            {
                 currentPatrolTime -= Time.deltaTime;
+                if (currentPatrolTime < 0)
+                {
+                    currentPatrolTime = 0;
+                    currentDirection = "Right";
+                    currentPatrolTime = patrolDuration;
+                }
+            }
+            else
+            {
                 transform.Translate(Vector3.right * currentMoveSpeed * Time.deltaTime);
+                currentPatrolTime -= Time.deltaTime;
+                if (currentPatrolTime < 0)
+                {
+                    currentPatrolTime = 0;
+                    currentDirection = "Left";
+                    currentPatrolTime = patrolDuration;
+                }
             }
         }
     }

@@ -761,6 +761,10 @@ PrefabInstance:
       value: PatrolUpDown
       objectReference: {fileID: 0}
     - target: {fileID: 7721254486930449619, guid: a750f6a8f9cd0ef40a0672990b61f771, type: 3}
+      propertyPath: movementType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721254486930449619, guid: a750f6a8f9cd0ef40a0672990b61f771, type: 3}
       propertyPath: patrolDuration
       value: 2
       objectReference: {fileID: 0}
