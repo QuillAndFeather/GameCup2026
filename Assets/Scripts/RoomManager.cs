@@ -78,9 +78,21 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    public void HandlePickupResult(int pickedUpID)
+    {
+        //todo: get current task
+        int taskID = 0;
+
+        if (pickedUpID == taskID)
+        {
+            // mark room as completed if true
+        }
+    }
+
     public void HandleMilkManCollision()
     {
         //todo: take player back to previous room
+        ExitRoom();
     }
 
     private GameObject GetTaskPrefab()

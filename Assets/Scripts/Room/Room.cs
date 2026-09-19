@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class Room : MonoBehaviour
 {
-    // Each room requires 1 Player Spawn, at least 1 Object Spawnpoint, and at least 1 Milk Man Spawnpoint
-    // Spawnpoints will populate automatically as long as the Room is their parent object
+    // Each room requires 1 Player Spawn. It can have any numer of object spawnpoints and milk man spawnpoints
+    // Spawnpoints must have the Room as their parent object
     [SerializeField] private GameObject playerSpawn;
     public List<ObjectSpawnpoint> objectSpawns = new();
     public List<MilkManSpawnpoint> milkManSpawns = new();
@@ -31,8 +31,8 @@ public class Room : MonoBehaviour
     public void StartRoom(GameObject taskPrefab)
     {
         playerObject.transform.position = playerSpawn.transform.position; // teleport player to room
-        SpawnObject(taskPrefab); // spawn task object in room
-        SpawnMilkMan(); // spawn choco milk man in room
+        SpawnObject(taskPrefab); // spawn task object in room (if spawnpoints exist)
+        SpawnMilkMan(); // spawn choco milk man in room (if spawnpoints exist)
     }
 
     public void EndRoom()
@@ -42,7 +42,8 @@ public class Room : MonoBehaviour
         {
             Destroy(spawnedObjects[i]);
         }
-        Destroy(milkManObject);
+        if (milkManObject != null)
+            Destroy(milkManObject);
     }
 
     private void SpawnObject(GameObject objectToSpawn)
@@ -54,10 +55,6 @@ public class Room : MonoBehaviour
             Object newObject = spawnedObject.GetComponent<Object>();
             newObject.SetOwnerRoom(this);
         }
-        else
-        {
-            Debug.LogWarning("Room is missing object spawn locations");
-        }
     }
 
     private void SpawnMilkMan()
@@ -66,10 +63,6 @@ public class Room : MonoBehaviour
         {
             int milkSpawn = Random.Range(0, milkManSpawns.Count); // pick a random spawn location
             milkManObject = Instantiate(milkManPrefab, milkManSpawns[milkSpawn].transform.position, Quaternion.identity);
-        }
-        else
-        {
-            Debug.LogWarning("Room is missing milk man spawn locations");
         }
     }
 
