@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,19 +17,18 @@ public class JumpScareManager : MonoBehaviour
         }
     }
 
-    public Image cleaning;
-    public Image Cooking;
-    public Image Books;
-    public Image Vase;
-    public Image Death;
+    public GameObject cleaning;
+    public GameObject Cooking;
+    public GameObject Books;
+    public GameObject Vase;
+    public GameObject Death;
     
     void Start()
     {
-        cleaning.enabled = false;
-        Cooking.enabled = false;
-        Books.enabled = false;
-        Vase.enabled = false;
-        Death.enabled = false;
+        cleaning.SetActive(false);
+        Cooking.SetActive(false);
+        Books.SetActive(false);
+        Vase.SetActive(false);
+        Death.SetActive(false);
     }
-
 }
