@@ -38,6 +38,42 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //Disable all the scenes
+    private void DisableAllScenes()
+    {
+        for (int room = 0; room < objectPrefabs.Count; room++)
+        {
+            objectPrefabs[room].SetActive(false);
+        }
+    }
+
+    public void LoadRoomByName(string roomName)
+    {
+        //switch (roomName)
+        //{
+        //    case "LoobyRoom":
+        //        LoadRoom(LoobyRoom);
+        //        break;
+        //    case "BrainRoom":
+        //        LoadRoom(BrainRoom);
+        //        break;
+        //    default:
+        //        Debug.LogWarning($"Room '{roomName}' not found.");
+        //        break;
+        //}
+
+        //Disable scenes
+        DisableAllScenes();
+
+        //For loop to go between scenes, enabling only the input
+        for (int room = 0; room < objectPrefabs.Count; room++)
+        {
+            if (objectPrefabs[room].name == roomName) objectPrefabs[room].SetActive(true); //Enable the room
+
+            else objectPrefabs[room].SetActive(false); //Disable the room
+        }
+    }
+
     public void HandleMilkManCollision()
     {
         //todo: gameover screen?
