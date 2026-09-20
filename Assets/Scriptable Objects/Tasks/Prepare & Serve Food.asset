@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TaskSO
   bComplete: 0
   bIntermissionComplete: 0
-  taskRequirement: Cook and Place Food on the Table
+  taskRequirement: Prepare, Cook, and Serve the Chicken
   taskLocation: Kitchen

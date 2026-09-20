@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Grab Pencil
   m_EditorClassIdentifier: Assembly-CSharp::TaskSO
   bComplete: 0
+  bIntermissionComplete: 0
   taskRequirement: 
+  taskLocation: 

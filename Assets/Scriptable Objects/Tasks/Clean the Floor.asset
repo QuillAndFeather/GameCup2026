@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TaskSO
   bComplete: 0
   bIntermissionComplete: 0
-  taskRequirement: Clean the Floor
+  taskRequirement: Clean the Tiling
   taskLocation: Bathroom
