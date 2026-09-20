@@ -41,7 +41,8 @@ public abstract class RoomConditionManager : MonoBehaviour
         if (correctChecks == bChecks.Length)
         {
             Debug.Log($"Task Complete: {assignedTask.name}");
-            TaskManager.instance.MarkTaskComplete(assignedTask);
+            if(TaskManager.instance != null) TaskManager.instance.MarkTaskComplete(assignedTask);
+            if(TskMaster.instance != null) TskMaster.instance.MarkTaskComplete(assignedTask);
         }
     }
 

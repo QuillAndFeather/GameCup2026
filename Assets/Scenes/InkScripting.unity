@@ -230,9 +230,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BedroomOrganizeConditional
   interactionIcon: {fileID: 0}
+  bActivateIcon: 1
+  bActivateOnTrigger: 0
   checkIndex: 0
   previousNeededIndex: 0
   assignedRoom: {fileID: 565019667}
+  bookMess: {fileID: 0}
+  organizedBooks: {fileID: 0}
 --- !u!212 &309694131
 SpriteRenderer:
   serializedVersion: 3
@@ -523,6 +527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BathroomMopConditional
   interactionIcon: {fileID: 0}
+  bActivateIcon: 1
+  bActivateOnTrigger: 0
   checkIndex: 0
   previousNeededIndex: 0
   assignedRoom: {fileID: 1501106184}
@@ -658,6 +664,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365375a111fb6214eb93dd20ec740779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BedroomConditionManager
+--- !u!1 &569793862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 569793864}
+  - component: {fileID: 569793863}
+  m_Layer: 0
+  m_Name: TestDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &569793863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569793862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e65e954bf3debe4a9a9a8c5e3d90d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueDisplay
+  dialogueLines: {fileID: 11400000, guid: 5bcbb95f6c2eaa74096fc2dac911766d, type: 2}
+  bTest: 1
+--- !u!4 &569793864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569793862}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 674.1672, y: 468.248, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrainExitInteractable
   interactionIcon: {fileID: 0}
+  bActivateIcon: 1
+  bActivateOnTrigger: 0
 --- !u!212 &743829827
 SpriteRenderer:
   serializedVersion: 3
@@ -1241,9 +1295,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KitchenTableConditional
   interactionIcon: {fileID: 0}
+  bActivateIcon: 1
+  bActivateOnTrigger: 0
   checkIndex: 1
   previousNeededIndex: 0
   assignedRoom: {fileID: 1524837302}
+  chickedButCooked: {fileID: 0}
 --- !u!212 &1037390816
 SpriteRenderer:
   serializedVersion: 3
@@ -1703,6 +1760,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
   interactionIcon: {fileID: 0}
+  bActivateIcon: 1
+  bActivateOnTrigger: 0
 --- !u!1 &1133538477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,6 +1794,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LivingRoomPotConditional
   interactionIcon: {fileID: 0}
+  bActivateIcon: 1
+  bActivateOnTrigger: 0
   checkIndex: 0
   previousNeededIndex: 0
   assignedRoom: {fileID: 921790555}
@@ -1913,9 +1974,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KitchenOvenConditional
   interactionIcon: {fileID: 0}
+  bActivateIcon: 1
+  bActivateOnTrigger: 0
   checkIndex: 0
   previousNeededIndex: 0
   assignedRoom: {fileID: 1524837302}
+  chicken: {fileID: 0}
 --- !u!212 &1596353292
 SpriteRenderer:
   serializedVersion: 3
@@ -2376,9 +2440,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LivingRoomTableConditional
   interactionIcon: {fileID: 0}
+  bActivateIcon: 1
+  bActivateOnTrigger: 0
   checkIndex: 1
   previousNeededIndex: 0
   assignedRoom: {fileID: 921790555}
+  pot: {fileID: 0}
 --- !u!1001 &14232455157194021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2623,6 +2690,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03259e3d3a78e3e42af28393d240077f, type: 3}
+--- !u!1001 &2658973290452804621
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426130020820969844, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_Name
+      value: DialogueManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
 --- !u!1001 &3779966899202308585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2891,3 +3015,5 @@ SceneRoots:
   - {fileID: 1133538480}
   - {fileID: 2145631827}
   - {fileID: 743829828}
+  - {fileID: 2658973290452804621}
+  - {fileID: 569793864}

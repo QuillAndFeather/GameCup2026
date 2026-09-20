@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class DoorInteractable : Interactable
+public class DorInteractable : Interactable
 {
-    private TaskDoorTrigger assignedDoor; //Reference to the assigned door of this interactable
+    private TDoorTrigger assignedDoor; //Reference to the assigned door of this interactable
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        assignedDoor = GetComponent<TaskDoorTrigger>(); //Grab the component
+        assignedDoor = GetComponent<TDoorTrigger>(); //Grab the component
     }
 
     // Interaction Override
