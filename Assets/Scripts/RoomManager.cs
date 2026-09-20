@@ -44,17 +44,25 @@ public class RoomManager : MonoBehaviour
     }
     public void LoadRoomByName(string roomName)
     {
-        switch (roomName)
+        //switch (roomName)
+        //{
+        //    case "LoobyRoom":
+        //        LoadRoom(LoobyRoom);
+        //        break;
+        //    case "BrainRoom":
+        //        LoadRoom(BrainRoom);
+        //        break;
+        //    default:
+        //        Debug.LogWarning($"Room '{roomName}' not found.");
+        //        break;
+        //}
+
+        //For loop to go between scenes, enabling only the input
+        for (int room = 0; room < rooms.Count; room++)
         {
-            case "LoobyRoom":
-                LoadRoom(LoobyRoom);
-                break;
-            case "BrainRoom":
-                LoadRoom(BrainRoom);
-                break;
-            default:
-                Debug.LogWarning($"Room '{roomName}' not found.");
-                break;
+            if (rooms[room].name == roomName) rooms[room].SetActive(true); //Enable the room
+
+            else rooms[room].SetActive(false); //Disable the room
         }
     }
     public void LoadRoomByIndex(int index)
