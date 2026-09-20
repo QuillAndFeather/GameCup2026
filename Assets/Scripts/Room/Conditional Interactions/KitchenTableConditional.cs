@@ -18,5 +18,7 @@ public class KitchenTableConditional : TaskConditionInteractable
         ForceDisableIcon();
 
         chickedButCooked.SetActive(true);
+
+        audioPlayer.PlayRandomSound();
     }
 }

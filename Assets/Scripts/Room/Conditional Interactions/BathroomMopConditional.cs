@@ -8,7 +8,9 @@ public class BathroomMopConditional : TaskConditionInteractable
 
     public override void CheckToMark(int index)
     {
-       
+
+        audioPlayer.PlayRandomSound(); //Play sound
+
         assignedRoom.CompleteCheck(index); //Mark the check as complete
 
 

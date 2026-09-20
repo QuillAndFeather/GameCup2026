@@ -9,10 +9,17 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] TMP_Text displayText; //Text for message to play
 
+    [SerializeField] AudioPlayer audioPlayer;
+
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        audioPlayer = GetComponentInChildren<AudioPlayer>(); //Get the audio player child
     }
 
     // Text displaying functions
@@ -42,6 +49,8 @@ public class DialogueManager : MonoBehaviour
 
     public void WriteText(string message)
     {
+        audioPlayer.PlayRandomSound();
+
         DisplayTextBox(); //Display the text box
 
         GameManager.instance.controller.bCanMove = false; //Make is so the player cannot move

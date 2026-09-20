@@ -8,6 +8,13 @@ public abstract class RoomConditionManager : MonoBehaviour
 
     [SerializeField] TaskSO assignedTask; //Task that will be marked as complete
 
+    [SerializeField] AudioPlayer audioPlayer;
+
+    private void Start()
+    {
+        audioPlayer = GetComponent<AudioPlayer>(); //Grab the audio player child
+    }
+
     // Conditional statements
 
     public void CompleteCheck(int checkIndex)
@@ -40,6 +47,8 @@ public abstract class RoomConditionManager : MonoBehaviour
 
         if (correctChecks == bChecks.Length)
         {
+            audioPlayer.PlayRandomSound(); //Play the completion sound
+
             Debug.Log($"Task Complete: {assignedTask.name}");
             if(TaskManager.instance != null) TaskManager.instance.MarkTaskComplete(assignedTask);
             if(TskMaster.instance != null) TskMaster.instance.MarkTaskComplete(assignedTask);

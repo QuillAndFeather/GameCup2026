@@ -9,6 +9,8 @@ public class KitchenOvenConditional : TaskConditionInteractable
 
     public override void CheckToMark(int index)
     {
+        audioPlayer.PlayRandomSound(); //Play Sound
+
         assignedRoom.CompleteCheck(index); //Complete the check automatically
 
         //Play the cinematic of oven
