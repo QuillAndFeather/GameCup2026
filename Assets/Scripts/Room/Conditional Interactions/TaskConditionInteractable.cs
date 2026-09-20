@@ -8,6 +8,8 @@ public abstract class TaskConditionInteractable : Interactable
 
     public override void Interaction()
     {
+        if (bCheckMark(checkIndex)) return; //Return if this was already done
+
         CheckToMark(checkIndex); //Conduct the check to mark
     }
 

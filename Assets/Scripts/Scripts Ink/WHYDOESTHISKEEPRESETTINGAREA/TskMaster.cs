@@ -1,11 +1,10 @@
-using System;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class TaskManager : MonoBehaviour
+public class TskMaster : MonoBehaviour
 {
-    public static TaskManager instance; //Created instance of the task manager
+    public static TskMaster instance; //Created instance of the task manager
 
     [Header("Task Lists")]
 
@@ -34,11 +33,11 @@ public class TaskManager : MonoBehaviour
 
     public void AddInactiveTask(TaskSO taskToAdd)
     {
-        int taskRefIndex = inactiveTasks.IndexOf(taskToAdd); //Identify the index at which the task is located within the active list
+        int taskRefIndex = tasks.IndexOf(taskToAdd); //Identify the index at which the task is located within the active list
 
-        tasks.Add(inactiveTasks[taskRefIndex]); //Move the designated task to the inactive tasks list
+        inactiveTasks.Add(tasks[taskRefIndex]); //Move the designated task to the inactive tasks list
 
-        inactiveTasks.RemoveAt(taskRefIndex); //Remove the specified index of the found reference index
+        tasks.RemoveAt(taskRefIndex); //Remove the specified index of the found reference index
 
         DisplayTasks(); //Update the task list
     }
@@ -104,7 +103,7 @@ public class TaskManager : MonoBehaviour
             Application.Quit(); //Temporary, but quit the game
             return true;
         }
-            
+
         return false;
     }
 
@@ -114,7 +113,7 @@ public class TaskManager : MonoBehaviour
     public void DisplayTasks()
     {
         //Reset the text field
-        taskText.text = ""; 
+        taskText.text = "";
 
         //Loop through all the active tasks to display
         for (int task = 0; task < tasks.Count; task++)
@@ -135,7 +134,7 @@ public class TaskManager : MonoBehaviour
     //Check if there is currently that task in the active task list
     public bool bContainsTask(TaskSO searchTask)
     {
-        if(tasks.Contains(searchTask)) return true;
+        if (tasks.Contains(searchTask)) return true;
 
         return false;
     }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a51818c9595994d845ea9ba4af22e4, type: 3}
+  m_Name: Already done Room
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueLinesSO
+  lines:
+  - I believe I already did what was here..
+  - I did my chore here.
+  - Why would I do the same task twice.. or was it three times..
+  - Nope. Not again.
+  - Mm.. my list says I did this already.

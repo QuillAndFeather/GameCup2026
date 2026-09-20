@@ -24,6 +24,7 @@ public abstract class Controller : MonoBehaviour
     public virtual void UnPossess()
     {
         this.pawn = null;
+        GameManager.instance.playerPawn = null; //Null the player pawn
     }
     public virtual void Decision (){ 
         //do things

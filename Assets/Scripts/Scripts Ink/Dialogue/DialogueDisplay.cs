@@ -8,6 +8,15 @@ public class DialogueDisplay : MonoBehaviour
 
     [SerializeField] DialogueLinesSO dialogueLines; //List of lines to select from
 
+    [SerializeField] bool bTest; //Run the start function for testing
+
+    private void Start()
+    {
+        if (!bTest) return; //Return if no testing allowed
+
+        InvokeRepeating("DisplayRandomMessage", 2, 2); //Display a random message every 2 seconds
+    } 
+
     public void DisplayRandomMessage()
     {
         FindAnyObjectByType<PlayerController>().SwapMovementState(); //Make is so player cannot move

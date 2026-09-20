@@ -9,7 +9,12 @@ public class GameManager : MonoBehaviour
     public List<GameObject> objectPrefabs = new();
     public GameObject currentObjectPrefab;
     public List<Room> rooms = new();
+    public bool bInCombat; //Is the player in combat?
     public Room currentRoom;
+
+    [Header("Dialogue")]
+
+    [SerializeField] DialogueLinesSO intro; //Intro dialogue line
 
     public PlayerController controller;
 
@@ -101,7 +106,9 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         
-     LoadRoomByName("FrontYard");
+        LoadRoomByName("FrontYard");
+
+        DialogueManager.instance.WriteText(DialogueManager.instance.GetRandomLine(intro)); //Play the intro
     }
     public void LoadCredits()
     {

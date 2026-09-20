@@ -36,27 +36,26 @@ public class PlayerController : Controller
                     pawn.interact();
                 }
 
-                base.Decision();
+                if (inputAction["Attack"].WasPressedThisFrame())
+                {
+                    pawn.Shoot();
+                }
             }
             else //Player cannot move, primarily due dialogue popups
-            if (inputAction["Attack"].WasPressedThisFrame())
-            {
-                pawn.Shoot();
-            }
-
-            base.Decision();
-        }
-        else //Player cannot move, primarily due dialogue popups
-        {
-            if (inputAction["Interact"].WasPressedThisFrame())
             {
                 if (inputAction["Interact"].WasPressedThisFrame())
                 {
-                    DialogueManager.instance.DisableTextBox(); //Hide the text box
+                    if (inputAction["Interact"].WasPressedThisFrame())
+                    {
+                        DialogueManager.instance.DisableTextBox(); //Hide the text box
 
-                    SwapMovementState(); //Allow the player to move again
+                        SwapMovementState(); //Allow the player to move again
+                    }
                 }
             }
+            
+
+            base.Decision();
         }
     }
 
@@ -64,5 +63,17 @@ public class PlayerController : Controller
     public void SwapMovementState()
     {
         bCanMove = !bCanMove;
+    }
+
+    public override void Possess(Pawn pawn)
+    {
+        base.Possess(pawn);
+
+        PlayerPawn pPawn = pawn.GetComponent<PlayerPawn>(); //Grab the player pawn
+
+        if (pPawn is not null) //Null check
+        {
+            GameManager.instance.playerPawn = pPawn; //Set the pawn in the main game manager
+        }
     }
 }
