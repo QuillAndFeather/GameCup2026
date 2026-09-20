@@ -12,6 +12,13 @@ public class TDoorTrigger : MonoBehaviour
     [SerializeField] DialogueLinesSO forgettingTask; //You got things to do y'know
     [SerializeField] DialogueLinesSO nonActiveTask; //Was that task always there?
 
+    [SerializeField] AudioPlayer audioPlayer; //Reference to the Audio Player
+
+
+    private void Start()
+    {
+        audioPlayer = GetComponentInChildren<AudioPlayer>(); //Grab the child prefab
+    }
 
     // Assigning the initial task
 
@@ -30,6 +37,8 @@ public class TDoorTrigger : MonoBehaviour
         //Check if this is a brain room
         if (assignedTask is null && bExitDoor)
         {
+            audioPlayer.PlayRandomSound(); //Play the door sound
+
             GameManager.instance.LoadRoomByName(roomToLoad);
 
             HideTaskList(); //Hide the task list
@@ -47,6 +56,8 @@ public class TDoorTrigger : MonoBehaviour
         }
         else if (assignedTask.bComplete && bExitDoor) //Else if the task is complete and is the exit, load back to the specified room
         {
+            audioPlayer.PlayRandomSound(); //Play the door sound
+
             GameManager.instance.LoadRoomByName(roomToLoad);
 
             DisplayTaskList(); //Ensure the list is showing
@@ -65,6 +76,8 @@ public class TDoorTrigger : MonoBehaviour
 
         if (bActiveTask) //Case that it is currently active
         {
+            audioPlayer.PlayRandomSound(); //Play the door sound
+
             GameManager.instance.LoadRoomByName(roomToLoad); //Load the room that is assigned to this task
             Debug.Log("The player can participate in this minigame");
 

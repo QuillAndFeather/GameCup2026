@@ -9,6 +9,8 @@ public class BedroomOrganizeConditional : TaskConditionInteractable
     bool bTimerRunning;
     public override void CheckToMark(int index)
     {
+        audioPlayer.PlayRandomSound(); //Play Sound
+
         assignedRoom.CompleteCheck(index); //Complete the check
 
         //Flash the full res image of organization

@@ -15,6 +15,8 @@ public class LivingRoomTableConditional : TaskConditionInteractable
             return; //Return if the prior criteria isn't met
         }
 
+        audioPlayer.PlayRandomSound(); //Play sound
+
         assignedRoom.CompleteCheck(index); //Mark the check as complete
         JumpScareManager.instance.Vase.SetActive(true);
         TskMaster.instance.DisableTaskList();

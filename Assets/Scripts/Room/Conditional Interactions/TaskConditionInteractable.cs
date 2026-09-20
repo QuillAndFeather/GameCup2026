@@ -6,6 +6,13 @@ public abstract class TaskConditionInteractable : Interactable
 
     public int previousNeededIndex; //Index that has to be complete before this one
 
+    public AudioPlayer audioPlayer; //Audio player of the interactable
+
+    private void Start()
+    {
+        audioPlayer = GetComponentInChildren<AudioPlayer>(); //Get the audio player component in children
+    }
+
     public override void Interaction()
     {
         if (bCheckMark(checkIndex)) return; //Return if this was already done
