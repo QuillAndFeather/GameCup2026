@@ -30,11 +30,13 @@ public class RoomManager : MonoBehaviour
     {
         LoobyRoom.SetActive(true);
         BrainRoom.SetActive(false);
+        isInCombat = false;
     }
     public void LoadBrainRoom()
     {
         LoobyRoom.SetActive(false);
         BrainRoom.SetActive(true);
+        isInCombat = true;
     }
     public void LoadRoom(GameObject room)
     {
