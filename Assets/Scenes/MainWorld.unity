@@ -1320,6 +1320,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: maxCooldown
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: activeCamera
+      value: 
+      objectReference: {fileID: 1051647628}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2827980866800142696, guid: fe7696c49d66bdd439828e94f07204d9, type: 3}
     - target: {fileID: 1996832056552247984, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9659258
@@ -1536,7 +1548,8 @@ PrefabInstance:
       propertyPath: taskToRemove
       value: 
       objectReference: {fileID: 11400000, guid: 253f1e6d13b879a4fa0ab8cadd83267d, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1321119451623279709, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8656891598598028069, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
@@ -7735,6 +7748,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 146.343
       objectReference: {fileID: 0}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: maxCooldown
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: activeCamera
+      value: 
+      objectReference: {fileID: 1051647628}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2827980866800142696, guid: fe7696c49d66bdd439828e94f07204d9, type: 3}
     - target: {fileID: 1996832056552247984, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: m_LocalPosition.x
       value: 628.6
@@ -8027,7 +8052,8 @@ PrefabInstance:
       propertyPath: taskToRemove
       value: 
       objectReference: {fileID: 11400000, guid: 065d5ed17d8a76b49a9d4fb6ffb74a7b, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1321119451623279709, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8656891598598028069, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
@@ -10895,6 +10921,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: maxCooldown
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: activeCamera
+      value: 
+      objectReference: {fileID: 1051647628}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2827980866800142696, guid: fe7696c49d66bdd439828e94f07204d9, type: 3}
     - target: {fileID: 1996832056552247984, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -11099,7 +11137,8 @@ PrefabInstance:
       propertyPath: taskToRemove
       value: 
       objectReference: {fileID: 11400000, guid: f9fbbba4e975fa844b32cceb7c158110, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1321119451623279709, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8656891598598028069, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
@@ -14409,6 +14448,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -31.96
       objectReference: {fileID: 0}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: maxCooldown
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: activeCamera
+      value: 
+      objectReference: {fileID: 1051647628}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2827980866800142696, guid: fe7696c49d66bdd439828e94f07204d9, type: 3}
     - target: {fileID: 1996832056552247984, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.91785395
@@ -16547,6 +16598,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 568.8
       objectReference: {fileID: 0}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: maxCooldown
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: activeCamera
+      value: 
+      objectReference: {fileID: 1051647628}
+    - target: {fileID: 1830413949759531682, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2827980866800142696, guid: fe7696c49d66bdd439828e94f07204d9, type: 3}
     - target: {fileID: 1996832056552247984, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: m_LocalPosition.x
       value: 679.7905
@@ -16715,7 +16778,8 @@ PrefabInstance:
       propertyPath: speed
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1321119451623279709, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8656891598598028069, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
