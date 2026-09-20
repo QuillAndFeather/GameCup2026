@@ -12,7 +12,8 @@ public class BedroomOrganizeConditional : TaskConditionInteractable
         assignedRoom.CompleteCheck(index); //Complete the check
 
         //Flash the full res image of organization
-        JumpScareManager.instance.Books.enabled = true;
+        JumpScareManager.instance.Books.SetActive(true);
+        TskMaster.instance.DisableTaskList();
 
         timeCompleted = Time.time; //Set the current time
         bTimerRunning = true;
@@ -32,7 +33,8 @@ public class BedroomOrganizeConditional : TaskConditionInteractable
 
             GameManager.instance.controller.bCanMove = true;
             bTimerRunning = false;
-            JumpScareManager.instance.Books.enabled = false;
+            JumpScareManager.instance.Books.SetActive(false);
+            TskMaster.instance.EnableTaskList();
         }
     }
 }

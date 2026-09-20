@@ -15,7 +15,8 @@ public class BathroomMopConditional : TaskConditionInteractable
         //Play the flashbang image of cleaning
         GameManager.instance.controller.bCanMove = false;
 
-        JumpScareManager.instance.cleaning.enabled = true;
+        JumpScareManager.instance.cleaning.SetActive(true);
+        TskMaster.instance.DisableTaskList();
 
         //Disable Icon and Interaction
         ForceDisableIcon();
@@ -32,7 +33,8 @@ public class BathroomMopConditional : TaskConditionInteractable
 
             GameManager.instance.controller.bCanMove = true;
             bTimerRunning=false;
-            JumpScareManager.instance.cleaning.enabled = false;
+            JumpScareManager.instance.cleaning.SetActive(false);
+            TskMaster.instance.EnableTaskList();
         } 
     }
 }
