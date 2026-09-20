@@ -504,9 +504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4c351796e788241a6830dc16bc50a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskDoorTrigger
-  assignedTask: {fileID: 11400000, guid: 4579e0147b2b47644864721156628761, type: 2}
-  bExitDoor: 0
-  roomToLoad: BedRoom
 --- !u!114 &65531640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27231ec0b213fe1459ba2719fa63bff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
-  interactionIcon: {fileID: 1590967157}
 --- !u!61 &65531641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1278,9 +1274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4c351796e788241a6830dc16bc50a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskDoorTrigger
-  assignedTask: {fileID: 11400000, guid: 24a25103649e649438298f188f2f91dc, type: 2}
-  bExitDoor: 0
-  roomToLoad: LivingRoom
 --- !u!114 &287630874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,7 +1286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27231ec0b213fe1459ba2719fa63bff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
-  interactionIcon: {fileID: 689511385}
 --- !u!61 &287630875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2318,6 +2310,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7214625427666239509, guid: d54b2ea3556ae41409416fa4f9956939, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214625427666239509, guid: d54b2ea3556ae41409416fa4f9956939, type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 1455849206}
@@ -2844,11 +2840,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2272991612594449516, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
   m_PrefabInstance: {fileID: 595030537}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &595030539 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5037504655137244581, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
-  m_PrefabInstance: {fileID: 595030537}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &607755082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2917,11 +2908,6 @@ PrefabInstance:
 --- !u!4 &607755083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2272991612594449516, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
-  m_PrefabInstance: {fileID: 607755082}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &607755084 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5037504655137244581, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
   m_PrefabInstance: {fileID: 607755082}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
@@ -3130,11 +3116,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2272991612594449516, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
   m_PrefabInstance: {fileID: 641428652}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &641428654 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5037504655137244581, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
-  m_PrefabInstance: {fileID: 641428652}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &678581324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3276,11 +3257,6 @@ PrefabInstance:
 --- !u!4 &689511384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2272991612594449516, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
-  m_PrefabInstance: {fileID: 689511383}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &689511385 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5037504655137244581, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
   m_PrefabInstance: {fileID: 689511383}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &690466971
@@ -5200,11 +5176,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2272991612594449516, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
   m_PrefabInstance: {fileID: 1103552408}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1103552410 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5037504655137244581, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
-  m_PrefabInstance: {fileID: 1103552408}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1127671111
 GameObject:
   m_ObjectHideFlags: 0
@@ -5253,9 +5224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4c351796e788241a6830dc16bc50a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskDoorTrigger
-  assignedTask: {fileID: 11400000, guid: 24a25103649e649438298f188f2f91dc, type: 2}
-  bExitDoor: 1
-  roomToLoad: LobbyRoom
 --- !u!114 &1127671114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5268,7 +5236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27231ec0b213fe1459ba2719fa63bff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
-  interactionIcon: {fileID: 641428654}
 --- !u!61 &1127671115
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5989,7 +5956,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1406417831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b4c351796e788241a6830dc16bc50a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e8c42ae01c3c274f83e2f56b309a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskDoorTrigger
   assignedTask: {fileID: 11400000, guid: 1f13fba6a63f2c64c8628b7ffb0a7d62, type: 2}
@@ -6004,7 +5971,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1406417831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27231ec0b213fe1459ba2719fa63bff8, type: 3}
+  m_Script: {fileID: 11500000, guid: 67f947b7448b93b4caefda815f073e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
   interactionIcon: {fileID: 1159718815}
@@ -6270,9 +6237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4c351796e788241a6830dc16bc50a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskDoorTrigger
-  assignedTask: {fileID: 11400000, guid: 4579e0147b2b47644864721156628761, type: 2}
-  bExitDoor: 1
-  roomToLoad: LobbyRoom
 --- !u!114 &1531523872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6285,7 +6249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27231ec0b213fe1459ba2719fa63bff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
-  interactionIcon: {fileID: 1103552410}
 --- !u!61 &1531523873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6691,11 +6654,6 @@ PrefabInstance:
 --- !u!4 &1590967156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2272991612594449516, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
-  m_PrefabInstance: {fileID: 1590967155}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1590967157 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5037504655137244581, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
   m_PrefabInstance: {fileID: 1590967155}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1636099911
@@ -7544,11 +7502,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2272991612594449516, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
   m_PrefabInstance: {fileID: 1865496549}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1865496551 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5037504655137244581, guid: 10235ad68a9e0bd49ad8fb7d08b20bff, type: 3}
-  m_PrefabInstance: {fileID: 1865496549}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1868101902
 GameObject:
   m_ObjectHideFlags: 0
@@ -7890,9 +7843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4c351796e788241a6830dc16bc50a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskDoorTrigger
-  assignedTask: {fileID: 11400000, guid: 76ca17f7a54105b429b1970f35d7eee6, type: 2}
-  bExitDoor: 1
-  roomToLoad: LobbyRoom
 --- !u!114 &1890241051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7905,7 +7855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27231ec0b213fe1459ba2719fa63bff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
-  interactionIcon: {fileID: 607755084}
 --- !u!61 &1890241052
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8188,9 +8137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4c351796e788241a6830dc16bc50a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskDoorTrigger
-  assignedTask: {fileID: 11400000, guid: 76ca17f7a54105b429b1970f35d7eee6, type: 2}
-  bExitDoor: 0
-  roomToLoad: Kitchen
 --- !u!114 &2005872406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8203,7 +8149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27231ec0b213fe1459ba2719fa63bff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
-  interactionIcon: {fileID: 595030539}
 --- !u!61 &2005872407
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8553,9 +8498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4c351796e788241a6830dc16bc50a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskDoorTrigger
-  assignedTask: {fileID: 11400000, guid: 1f13fba6a63f2c64c8628b7ffb0a7d62, type: 2}
-  bExitDoor: 1
-  roomToLoad: LobbyRoom
 --- !u!114 &2033177014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8568,7 +8510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27231ec0b213fe1459ba2719fa63bff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
-  interactionIcon: {fileID: 1865496551}
 --- !u!61 &2033177015
 BoxCollider2D:
   m_ObjectHideFlags: 0
