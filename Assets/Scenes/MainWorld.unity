@@ -1465,6 +1465,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7959483745163704851, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: bInCombat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959483745163704851, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 329263610}
@@ -7952,6 +7956,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7959483745163704851, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: bInCombat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959483745163704851, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 329263610}
@@ -10289,7 +10297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929e5eb82e7d1bf418ab002e46ba30e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  milkManPrefab: {fileID: 0}
+  milkManPrefab: {fileID: 773071373734162852, guid: fdf8e5fcefbbea549a9e97651add9aa1, type: 3}
   playerPawn: {fileID: 0}
   objectPrefabs:
   - {fileID: 800986289}
@@ -10309,7 +10317,6 @@ MonoBehaviour:
   - {fileID: 482478232}
   currentObjectPrefab: {fileID: 0}
   rooms: []
-  bInCombat: 0
   currentRoom: {fileID: 0}
   intro: {fileID: 11400000, guid: f9a0fc2787b5f804cae07b0b50e6d044, type: 2}
   controller: {fileID: 329263610}
@@ -11019,6 +11026,10 @@ PrefabInstance:
     - target: {fileID: 7572646673967521285, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959483745163704851, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: bInCombat
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7959483745163704851, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: controller
@@ -12607,7 +12618,6 @@ MonoBehaviour:
   - {fileID: 482478232}
   currentObjectPrefab: {fileID: 0}
   rooms: []
-  bInCombat: 0
   currentRoom: {fileID: 0}
   intro: {fileID: 0}
   controller: {fileID: 329263610}
@@ -14546,6 +14556,10 @@ PrefabInstance:
     - target: {fileID: 7572646673967521285, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959483745163704851, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: bInCombat
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7959483745163704851, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: controller
@@ -16632,6 +16646,10 @@ PrefabInstance:
     - target: {fileID: 7572646673967521285, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959483745163704851, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
+      propertyPath: bInCombat
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7959483745163704851, guid: 278a8d54f2a58c34b9bc5db83b467337, type: 3}
       propertyPath: controller

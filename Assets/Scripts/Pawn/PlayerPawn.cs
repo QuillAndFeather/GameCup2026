@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerPawn : Pawn
 {
     private GameManager gameManager;
+    public bool bInCombat = false; //Is the player in combat?
     [Header("Pawn Speed")]
     public float speed;
     [Header("Pawn Mover")]
@@ -60,7 +61,7 @@ public class PlayerPawn : Pawn
 
     public override void Shoot()
     {
-        if (gameManager.bInCombat)
+        if (bInCombat)
             shooter.Shoot();
     }
    

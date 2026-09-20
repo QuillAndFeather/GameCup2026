@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public List<GameObject> objectPrefabs = new();
     public GameObject currentObjectPrefab;
     public List<Room> rooms = new();
-    public bool bInCombat; //Is the player in combat?
     public Room currentRoom;
 
     [Header("Dialogue")]
