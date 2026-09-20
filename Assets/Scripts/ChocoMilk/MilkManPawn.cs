@@ -24,7 +24,7 @@ public class MilkManPawn : MonoBehaviour
         currentTimer -= Time.deltaTime;
         if (currentTimer < 1)
         {
-            speed += .05f;
+            speed += .01f;
         }
     }
 
