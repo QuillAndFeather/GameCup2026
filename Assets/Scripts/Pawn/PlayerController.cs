@@ -11,6 +11,14 @@ public class PlayerController : Controller
     void Awake()
     {
     }
+    private void OnEnable()
+    {
+        inputAction.Enable();
+    }
+    private void OnDisable()
+    {
+        inputAction.Disable();
+    }
     public override void Decision()
     {
         if (pawn != null)
