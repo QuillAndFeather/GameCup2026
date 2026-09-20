@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public List<Room> rooms = new();
     public Room currentRoom;
 
-    public Controller controller;
+    public PlayerController controller;
 
     private void Awake()
     {

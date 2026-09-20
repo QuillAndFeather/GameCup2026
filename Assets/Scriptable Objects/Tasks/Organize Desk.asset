@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05027235bebb6054091e3c96bdf5290e, type: 3}
   m_Name: Organize Desk
   m_EditorClassIdentifier: Assembly-CSharp::TaskSO
-  bComplete: 0
+  bComplete: 1
   bIntermissionComplete: 0
   taskRequirement: Organize the Books on the Desk
   taskLocation: Bedroom
