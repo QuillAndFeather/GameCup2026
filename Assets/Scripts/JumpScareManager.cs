@@ -1,6 +1,5 @@
-using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class JumpScareManager : MonoBehaviour
 {
@@ -22,7 +21,7 @@ public class JumpScareManager : MonoBehaviour
     public GameObject Books;
     public GameObject Vase;
     public GameObject Death;
-    
+
     void Start()
     {
         cleaning.SetActive(false);
@@ -31,4 +30,21 @@ public class JumpScareManager : MonoBehaviour
         Vase.SetActive(false);
         Death.SetActive(false);
     }
+
+    public void Dysfunction()
+    {
+        StartCoroutine("DeathWait2");
+    }
+
+    IEnumerator DeathWait2()
+    {
+        Death.SetActive(true);
+        TskMaster.instance.DisableTaskList();
+        GameManager.instance.controller.bCanMove = false;
+        yield return new WaitForSeconds(2);
+        Death.SetActive(false);
+        TskMaster.instance.EnableTaskList();
+
+    }
+
 }

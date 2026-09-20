@@ -16,10 +16,10 @@ public class PlayerOverLaps : MonoBehaviour
         MilkManPawn othermilk = other.GetComponent<MilkManPawn>();
         if (othermilk != null)
         {
-           Debug.Log("Player has overlapped with MilkManPawn!");
-           GameManager.instance.LoadRoomByName(roomToReturn); //Load into the specified room
-
-           DialogueManager.instance.WriteText(DialogueManager.instance.GetRandomLine(caughtLines)); //Write a random line
+            Debug.Log("Player has overlapped with MilkManPawn!");
+            GameManager.instance.LoadRoomByName(roomToReturn); //Load into the specified room
+            JumpScareManager.instance.Dysfunction();
+            DialogueManager.instance.WriteText(DialogueManager.instance.GetRandomLine(caughtLines)); //Write a random line
         }
     }
 }
