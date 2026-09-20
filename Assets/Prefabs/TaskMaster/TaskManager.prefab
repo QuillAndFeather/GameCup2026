@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6559880815273358421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -282,14 +282,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3311542812314932750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e467455b646f6364ead1f5df39fdf867, type: 3}
+  m_Script: {fileID: 11500000, guid: 420a0acbe2f34654c8b1133a31787807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskManager
   tasks:
-  - {fileID: 11400000, guid: 1f13fba6a63f2c64c8628b7ffb0a7d62, type: 2}
-  - {fileID: 11400000, guid: 4579e0147b2b47644864721156628761, type: 2}
-  - {fileID: 11400000, guid: 24a25103649e649438298f188f2f91dc, type: 2}
-  - {fileID: 11400000, guid: 76ca17f7a54105b429b1970f35d7eee6, type: 2}
+  - {fileID: 11400000, guid: bf44e72bbda45aa488e1a1982dc9e833, type: 2}
+  - {fileID: 11400000, guid: 797e929f438f21e439402f6013227e2b, type: 2}
+  - {fileID: 11400000, guid: 8c847b5ed574b384ca3ab0b9b9176481, type: 2}
+  - {fileID: 11400000, guid: c1c70a6899c14f0458aa7029ed8f289a, type: 2}
   inactiveTasks: []
   taskCompletionThreshold: 4
   taskText: {fileID: 5940633636707354530}

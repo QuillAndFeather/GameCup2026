@@ -6,12 +6,20 @@ public abstract class Interactable : MonoBehaviour
 
     public bool bActivateIcon = true; //Should the icon activate?
 
+    public bool bActivateOnTrigger; //Should this activate when the trigger is hit?
+
     public abstract void Interaction(); //Function for interacting with the object
 
     // Triggers and Function for Enabling and Disabling the Interaction Icon
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (bActivateOnTrigger) //Force interaction if trigger is hit
+        {
+            Interaction();
+            return;
+        }
+
         if (!bActivateIcon) return; //Return if false
 
         PlayerPawn player = collision.GetComponent<PlayerPawn>(); //Attempt to grab the player component

@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        DisableAllScenes();
+        LoadRoomByName("MainMenu");
     }
 
     // Update is called once per frame
@@ -100,12 +101,12 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         
-        RoomManger.instance.LoadRoomByName("LobbyRoom");
+     LoadRoomByName("FrontYard");
     }
     public void LoadCredits()
     {
         Debug.Log("Loading Credits");
-        RoomManger.instance.LoadRoomByName("CreditsRoom");
+        LoadRoomByName("CreditsRoom");
     }
     public void QuitGame()
     {
@@ -115,6 +116,6 @@ public class GameManager : MonoBehaviour
     public void GoToMain()
     {
         Debug.Log("Going to Main Menu");
-        RoomManger.instance.LoadRoomByName("MainMenu");
+        LoadRoomByName("MainMenu");
     }
 }

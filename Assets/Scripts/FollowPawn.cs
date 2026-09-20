@@ -8,4 +8,5 @@ public class FollowPawn : MonoBehaviour
        if(GameManager.instance.controller != null && GameManager.instance.controller.pawn != null) 
         transform.position = GameManager.instance.controller.pawn.transform.position;
     }
+
 }

@@ -49,12 +49,12 @@ public class PlayerPawn : Pawn
    }
     void OnEnable()
     {
-        if(GameManager.instance != null) GameManager.instance.controller.Possess(this);
+        if(GameManager.instance != null&& GameManager.instance.controller != null) GameManager.instance.controller.Possess(this);
     }
 
     void OnDisable()
     {
-        if (GameManager.instance != null) GameManager.instance.controller.UnPossess();
+        if (GameManager.instance != null && GameManager.instance.controller != null) GameManager.instance.controller.UnPossess();
     }
 
 

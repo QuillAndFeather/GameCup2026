@@ -103,9 +103,10 @@ public class TaskManager : MonoBehaviour
         if (completeMarks == taskCompletionThreshold)
         {
             Debug.Log("Game win");
+            Application.Quit(); //Temporary, but quit the game
             return true;
         }
-
+            
         return false;
     }
 

@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Task", menuName = "Listed Task")]
 public class TaskSO : ScriptableObject
 {
+    //Yes
     public bool bComplete = false; //Has this task been completed?
 
     public bool bIntermissionComplete = false; //Has the intermission of this task been completed?
