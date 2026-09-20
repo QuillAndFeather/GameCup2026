@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1138589423275302809}
   - component: {fileID: -1089151037213480845}
   - component: {fileID: 1908261101995016556}
+  - component: {fileID: -4598435519063159304}
   m_Layer: 0
   m_Name: BookObject
   m_TagString: Untagged
@@ -195,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractablePickup
   interactionIcon: {fileID: 0}
+  itemID: 0
 --- !u!114 &1908261101995016556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,3 +209,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148612441091dca479688a00aae920a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupTrigger
+--- !u!114 &-4598435519063159304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000339430935729140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5e19d3fc6ecfc46b84ae440f9bd89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Object
