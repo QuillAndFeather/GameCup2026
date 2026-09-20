@@ -8,5 +8,8 @@ public class LivingRoomPotConditional : TaskConditionInteractable
 
         //Play the full res image
 
+
+        //Disable Icon and Interaction
+        ForceDisableIcon();
     }
 }

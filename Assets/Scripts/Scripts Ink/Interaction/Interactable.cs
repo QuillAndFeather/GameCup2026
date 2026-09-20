@@ -4,12 +4,16 @@ public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] GameObject interactionIcon; //Icon to enable and disable once the player is within range or hitting the trigger respectfully
 
+    public bool bActivateIcon = true; //Should the icon activate?
+
     public abstract void Interaction(); //Function for interacting with the object
 
     // Triggers and Function for Enabling and Disabling the Interaction Icon
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!bActivateIcon) return; //Return if false
+
         PlayerPawn player = collision.GetComponent<PlayerPawn>(); //Attempt to grab the player component
 
         if (player is null) return;
@@ -21,6 +25,8 @@ public abstract class Interactable : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (!bActivateIcon) return; //Return if false
+
         PlayerPawn player = collision.GetComponent<PlayerPawn>(); //Attempt to grab the player component
 
         if (player is null) return;
@@ -34,5 +40,7 @@ public abstract class Interactable : MonoBehaviour
     public void ForceDisableIcon()
     {
         if (interactionIcon != null) interactionIcon.SetActive(false);
+
+        bActivateIcon = false;
     }
 }

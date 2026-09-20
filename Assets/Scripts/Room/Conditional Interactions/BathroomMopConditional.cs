@@ -8,5 +8,8 @@ public class BathroomMopConditional : TaskConditionInteractable
 
         //Play the flashbang image of cleaning
 
+
+        //Disable Icon and Interaction
+        ForceDisableIcon();
     }
 }

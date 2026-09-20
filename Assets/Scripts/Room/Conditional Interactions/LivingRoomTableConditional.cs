@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class LivingRoomTableConditional : TaskConditionInteractable
 {
+    [SerializeField] GameObject pot;
+
     public override void CheckToMark(int index)
     {
         if (!bCheckMark(previousNeededIndex))
@@ -11,5 +13,10 @@ public class LivingRoomTableConditional : TaskConditionInteractable
         }
 
         assignedRoom.CompleteCheck(index); //Mark the check as complete
+
+        //Disable Icon and Interaction
+        ForceDisableIcon();
+
+        pot.SetActive(true);
     }
 }
