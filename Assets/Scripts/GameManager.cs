@@ -73,7 +73,16 @@ public class GameManager : MonoBehaviour
         //For loop to go between scenes, enabling only the input
         for (int room = 0; room < objectPrefabs.Count; room++)
         {
-            if (objectPrefabs[room].name == roomName) objectPrefabs[room].SetActive(true); //Enable the room
+            if (objectPrefabs[room].name == roomName)
+            {
+                objectPrefabs[room].SetActive(true); //Enable the room
+                if (objectPrefabs[room].GetComponent<Roomv2>())
+                {
+                    Debug.Log("Resetting brain room");
+                    Roomv2 roomComp = objectPrefabs[room].GetComponent<Roomv2>();
+                    roomComp.ResetRoom();
+                }
+            }
 
             else objectPrefabs[room].SetActive(false); //Disable the room
         }
