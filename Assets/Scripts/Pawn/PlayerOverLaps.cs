@@ -14,8 +14,7 @@ public class PlayerOverLaps : MonoBehaviour
         if (othermilk != null)
         {
            Debug.Log("Player has overlapped with MilkManPawn!");
-           if (roomManager != null)
-                roomManager.HandleMilkManCollision();
+           roomManager.HandleMilkManCollision();
         }
     }
 }

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 421445931256205746}
   - component: {fileID: -2983085388959107695}
   - component: {fileID: -4794972629983515731}
-  - component: {fileID: 3718536068473233960}
   m_Layer: 0
   m_Name: PencilObject
   m_TagString: Untagged
@@ -183,7 +182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractablePickup
   interactionIcon: {fileID: 0}
-  itemID: 0
 --- !u!114 &-4794972629983515731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,15 +194,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148612441091dca479688a00aae920a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupTrigger
---- !u!114 &3718536068473233960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110710079407046325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5e19d3fc6ecfc46b84ae440f9bd89d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Object
