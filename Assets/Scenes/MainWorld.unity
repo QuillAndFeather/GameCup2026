@@ -5783,6 +5783,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1255859331622865356, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183631061543776995, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483338256128029033, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823564760540986399, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5922221696576971653, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5826,6 +5842,10 @@ PrefabInstance:
     - target: {fileID: 8426130020820969844, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
       propertyPath: m_Name
       value: DialogueManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426130020820969844, guid: e4143e20a2da5b64181437ad11ba53c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
