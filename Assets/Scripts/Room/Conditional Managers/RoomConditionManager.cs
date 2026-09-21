@@ -12,7 +12,7 @@ public abstract class RoomConditionManager : MonoBehaviour
 
     private void Start()
     {
-        audioPlayer = GetComponent<AudioPlayer>(); //Grab the audio player child
+        //audioPlayer = GetComponentInChildren<AudioPlayer>(); //Grab the audio player child
     }
 
     // Conditional statements
@@ -47,7 +47,7 @@ public abstract class RoomConditionManager : MonoBehaviour
 
         if (correctChecks == bChecks.Length)
         {
-            audioPlayer.PlayRandomSound(); //Play the completion sound
+            if(audioPlayer is not null) audioPlayer.PlayRandomSound(); //Play the completion sound
 
             Debug.Log($"Task Complete: {assignedTask.name}");
             if(TaskManager.instance != null) TaskManager.instance.MarkTaskComplete(assignedTask);

@@ -45,12 +45,9 @@ public class PlayerController : Controller
             {
                 if (inputAction["Interact"].WasPressedThisFrame())
                 {
-                    if (inputAction["Interact"].WasPressedThisFrame())
-                    {
-                        DialogueManager.instance.DisableTextBox(); //Hide the text box
+                    DialogueManager.instance.DisableTextBox(); //Hide the text box
 
-                        SwapMovementState(); //Allow the player to move again
-                    }
+                    //SwapMovementState(); //Allow the player to move again
                 }
             }
             

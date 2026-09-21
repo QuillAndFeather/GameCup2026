@@ -70,7 +70,7 @@ public class TaskDoorTrigger : MonoBehaviour
             GameManager.instance.LoadRoomByName(roomToLoad); //Load the room that is assigned to this task
             Debug.Log("The player can participate in this minigame");
 
-            HideTaskList();
+            //HideTaskList();
         }
         else //Case that it currently is not active
         {
