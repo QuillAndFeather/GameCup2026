@@ -17,7 +17,7 @@ public class TDoorTrigger : MonoBehaviour
 
     private void Start()
     {
-        audioPlayer = GetComponentInChildren<AudioPlayer>(); //Grab the child prefab
+        //audioPlayer = GetComponentInChildren<AudioPlayer>(); //Grab the child prefab
     }
 
     // Assigning the initial task
@@ -37,7 +37,7 @@ public class TDoorTrigger : MonoBehaviour
         //Check if this is a brain room
         if (assignedTask is null && bExitDoor)
         {
-            audioPlayer.PlayRandomSound(); //Play the door sound
+            if(audioPlayer is not null) audioPlayer.PlayRandomSound(); //Play the door sound
 
             GameManager.instance.LoadRoomByName(roomToLoad);
 

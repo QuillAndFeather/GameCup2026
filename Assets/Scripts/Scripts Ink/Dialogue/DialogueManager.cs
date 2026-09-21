@@ -38,13 +38,17 @@ public class DialogueManager : MonoBehaviour
         {
             TaskManager.instance.EnableTaskList();
             TaskManager.instance.DisplayTasks();
+            
         }
 
         if (TskMaster.instance is not null)
         {
             TskMaster.instance.EnableTaskList();
             TskMaster.instance.DisplayTasks();
+            TskMaster.instance.ResetInactiveTasks(); //Attempt to reset inactive tasks
         }
+
+        GameManager.instance.controller.bCanMove = true; //Player Movement
     }
 
     public void WriteText(string message)

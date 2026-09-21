@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,11 @@ public class TskMaster : MonoBehaviour
     [SerializeField] TMP_Text taskText; //Text to display tasks
 
     [SerializeField] GameObject taskList; //Display of the task list
+
+    [SerializeField] bool bListVisible; //Is the list currently visible?
+    [SerializeField] DialogueLinesSO rememberingLines; //Lines to play when returning the player dialogue
+
+    [SerializeField] AudioPlayer gameWinAuido; //Play this when winning
 
 
     private void Awake()
@@ -53,6 +59,13 @@ public class TskMaster : MonoBehaviour
         DisplayTasks(); //Update the task list
     }
 
+    public void RestoreTask(TaskSO restoredTask)
+    {
+        tasks.Add(restoredTask); //Return to tasks
+
+        inactiveTasks.Remove(restoredTask); //Remove from inactive
+    }
+
     public void RandomizeTasks()
     {
         List<TaskSO> randomize = new(tasks); //Create a copy of the list
@@ -86,6 +99,19 @@ public class TskMaster : MonoBehaviour
         bool bWin = ChecklistComplete();
 
         //Debug.Log(bWin); //testing purposes
+        if (bWin)
+        {
+            StartCoroutine("Win");
+            DisableTaskList();
+        }
+    }
+
+    IEnumerator Win()
+    {
+        yield return new WaitForSeconds(5);
+
+        GameManager.instance.LoadRoomByName("Game Win");
+        gameWinAuido.PlayRandomSound();
     }
 
     public bool ChecklistComplete()
@@ -100,7 +126,8 @@ public class TskMaster : MonoBehaviour
         if (completeMarks == taskCompletionThreshold)
         {
             Debug.Log("Game win");
-            Application.Quit(); //Temporary, but quit the game
+
+            
             return true;
         }
 
@@ -144,10 +171,56 @@ public class TskMaster : MonoBehaviour
     public void EnableTaskList()
     {
         taskList.SetActive(true);
+
+        bListVisible = true;
     }
 
     public void DisableTaskList()
     {
         taskList.SetActive(false);
+
+        bListVisible = false;
+    }
+
+    // Function to return tasks
+
+    public void ResetInactiveTasks()
+    {
+        int bCompleteTasks = 0;
+
+        //Loop through the active tasks to see what is done
+
+        for (int active = 0; active < tasks.Count; active++)
+        {
+            if (tasks[active].bComplete) bCompleteTasks++; //Increment
+        }
+
+        if(bCompleteTasks != taskCompletionThreshold && bCompleteTasks == tasks.Count)
+        {
+            DialogueManager.instance.WriteText(DialogueManager.instance.GetRandomLine(rememberingLines)); //Remember the tasks
+
+            //Loop through and re-add the tasks
+
+            int inactiveCount = inactiveTasks.Count; //Get the loop amount
+
+            //Loop and readd them
+            for(int inactiveTask = 0; inactiveTask < inactiveCount; inactiveTask++)
+            {
+                int index = Random.Range(0, inactiveTasks.Count); //Random value of the inactive
+
+                RestoreTask(inactiveTasks[index]);
+            }
+
+            DisplayTasks(); //Re-display
+
+            StartCoroutine("RemoveDialogue");
+        }
+    }
+
+    IEnumerator RemoveDialogue()
+    {
+        yield return new WaitForSeconds(3);
+
+        DialogueManager.instance.DisableTextBox();
     }
 }

@@ -6,9 +6,11 @@ public class PlayerOverLaps : MonoBehaviour
 
     [SerializeField] string roomToReturn; //Where should the player return if they are caught?
 
+    [SerializeField] AudioPlayer audioPlayer; //Audio player
+
     void Start()
     {
-        
+        //audioPlayer = GetComponentInChildren<AudioPlayer>(); //Yes
     }
     
     public void OnTriggerEnter2D(Collider2D other)
@@ -20,6 +22,8 @@ public class PlayerOverLaps : MonoBehaviour
             GameManager.instance.LoadRoomByName(roomToReturn); //Load into the specified room
             JumpScareManager.instance.Dysfunction();
             DialogueManager.instance.WriteText(DialogueManager.instance.GetRandomLine(caughtLines)); //Write a random line
+
+            audioPlayer.PlayRandomSound();
         }
     }
 }
